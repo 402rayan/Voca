@@ -1,13 +1,13 @@
 const getRandomWordWithTranslations = `
-  SELECT
-    words.id AS word_id,
-    words.word,
-    words.language_id
-  FROM words
-  WHERE words.language_id = ?  -- Filtrez les mots français
-  ORDER BY RAND()
-  LIMIT 1;
+    SELECT w.word as source_word, t.translation as target_word
+FROM words w
+INNER JOIN translations t ON w.id = t.word_id
+WHERE w.language_id = ? AND t.language_id = ? AND w.language_id != t.language_id
+ORDER BY RAND()
+LIMIT 1;
+
 `;
+
 
 const getTranslationsForWord = `
   SELECT

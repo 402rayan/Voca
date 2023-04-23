@@ -10,61 +10,94 @@ const secret = process.env.JWT_SECRET; // Assurez-vous de définir cette variabl
 
 
 router.get('/api/word-to-guess', (req, res) => {
-    const frenchLanguageId = 1; // Assurez-vous que c'est l'ID correct pour le français dans votre base de données
+    const sourceLanguageId = req.query.sourceLanguageId;
+    const targetLanguageId = req.query.targetLanguageId;
 
-    db.query(getRandomWordWithTranslations, [frenchLanguageId], (err, results) => {
+    if (!sourceLanguageId || !targetLanguageId) {
+        res.status(400).send('Les paramètres sourceLanguageId et targetLanguageId sont requis.');
+        return;
+    }
+
+    const getRandomWordQuery = `
+    SELECT * FROM words
+    ORDER BY RAND()
+    LIMIT 1;
+  `;
+
+    db.query(getRandomWordQuery, [sourceLanguageId], (err, randomWordRows) => {
         if (err) {
-            console.error('Error fetching word:', err);
-            res.status(500).json({ error: 'Error fetching word' });
+            console.error('Erreur lors de la récupération d\'un mot aléatoire:', err);
+            res.status(500).send('Erreur lors de la récupération d\'un mot aléatoire.');
             return;
         }
 
-        const wordData = results[0];
-        if (!wordData) {
-            res.status(404).json({ error: 'No words found' });
+        if (randomWordRows.length === 0) {
+            res.status(404).send('Aucun mot trouvé.');
             return;
         }
 
-        const word = {
-            id: wordData.word_id,
-            word: wordData.word,
-            languageId: wordData.language_id,
-        };
+        const randomWord = randomWordRows[0];
 
-        // Récupérez les traductions pour le mot français
-        db.query(getTranslationsForWord, [word.id], (err, translationsResults) => {
+        const getTranslationsQuery = `
+      SELECT * FROM translations
+      WHERE word_id = ? AND (language_id = ? OR language_id = ?);
+    `;
+
+        db.query(getTranslationsQuery, [randomWord.id, sourceLanguageId, targetLanguageId], (err, translationRows) => {
             if (err) {
-                console.error('Error fetching translations:', err);
-                res.status(500).json({ error: 'Error fetching translations' });
+                console.error('Erreur lors de la récupération des traductions:', err);
+                res.status(500).send('Erreur lors de la récupération des traductions.');
                 return;
             }
 
-            const translations = translationsResults.map((row) => ({
-                id: row.id,
-                translation: row.translation,
-                languageId: row.language_id,
-            }));
+            if (translationRows.length > 0) {
+                const translations = translationRows.reduce((acc, row) => {
+                    acc[row.language_id] = row.translation;
+                    return acc;
+                }, {});
 
-            res.json({ word, translations });
+                res.json({
+                    word: {"word" : randomWord.word , "id" : randomWord.id},
+                    translations: translations,
+                });
+            } else {
+                res.status(404).send('Aucune traduction trouvée.');
+            }
         });
     });
 });
 
-
 router.post('/api/check-guess', (req, res) => {
-    const { wordId, languageId, guess } = req.body;
-    const query = 'SELECT * FROM translations WHERE word_id = ? AND language_id = ?';
-    db.query(query, [wordId, languageId], (err, result) => {
+    const { wordId, targetLanguageId, guess } = req.body;
+
+    if (!wordId || !targetLanguageId || !guess) {
+        res.status(400).send('Les paramètres wordId, targetLanguageId et guess sont requis.');
+        return;
+    }
+
+    const getCorrectTranslationQuery = `
+    SELECT * FROM translations
+    WHERE word_id = ? AND language_id = ?;
+  `;
+
+    db.query(getCorrectTranslationQuery, [wordId, targetLanguageId], (err, correctTranslationRows) => {
         if (err) {
-            console.error(err);
-            res.status(500).json({ error: 'Error checking guess in database' });
+            console.error('Erreur lors de la récupération de la traduction correcte:', err);
+            res.status(500).send('Erreur lors de la récupération de la traduction correcte.');
             return;
         }
-        const translation = result[0];
-        const correct = translation && translation.translation.toLowerCase() === guess.toLowerCase();
-        res.json({ correct });
+
+        if (correctTranslationRows.length === 0) {
+            res.status(404).send('Aucune traduction trouvée.');
+            return;
+        }
+
+        const correctTranslation = correctTranslationRows[0].translation;
+        const isCorrect = guess.trim().toLowerCase() === correctTranslation.trim().toLowerCase();
+        res.json({ correct: isCorrect });
     });
 });
+
 
 router.post('/api/register', (req, res) => {
     const { username, email, password } = req.body;
@@ -191,3 +224,5 @@ router.get('/api/languages', (req, res) => {
 });
 
 module.exports = router;
+
+
