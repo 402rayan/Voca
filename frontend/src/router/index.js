@@ -4,6 +4,7 @@ import Alphabets from '../components/Alphabets.vue';
 import Vocabulary from '../components/Vocabulary.vue';
 import LudicWords from '../components/LudicWords.vue';
 import Register from '../components/Register.vue';
+import AddWord from '../components/AddWord.vue';
 
 
 const routes = [
@@ -16,6 +17,11 @@ const routes = [
     path: '/register',
     name: 'Register',
     component: Register,
+  },
+  {
+    path: '/add-word',
+    name: 'AddWord',
+    component: AddWord,
   },
   {
     path: '/alphabets',

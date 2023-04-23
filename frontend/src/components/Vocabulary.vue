@@ -82,6 +82,10 @@ export default {
                 });
         },
         async checkGuess() {
+            if (this.guess.length < 1) {
+                this.message = "Vous n'avez rien marqué!";
+                return;
+            }
             axios
                 .post('http://localhost:3001/api/check-guess', {
                     wordId: this.wordToGuess.id,

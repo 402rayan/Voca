@@ -29,6 +29,9 @@
                     <li v-if="isLoggedIn" class="nav-item">
                         <a class="nav-link" href="#" @click.prevent="logout">Se déconnecter</a>
                     </li>
+                    <li class="nav-item">
+                            <router-link class="nav-link" to="/add-word">Ajouter un mot</router-link>
+                        </li>
                 </ul>
             </div>
         </div>
