@@ -1,41 +1,32 @@
 <template>
-    <div class="add-word">
-        <h2>Ajouter un mot et ses traductions</h2>
-        <form @submit.prevent="addWordAndTranslations">
-            <label for="word">Mot :</label>
-            <input type="text" id="word" v-model="word" required />
-
-            <label for="sourceLanguage">Langue source :</label>
-            <select id="sourceLanguage" v-model="selectedSourceLanguage" required>
-                <option v-for="language in languages" :key="language.id" :value="language.id">
-                    {{ language.language_name }}
-                </option>
-            </select>
-
-            <label for="targetLanguage">Langue cible :</label>
-            <select id="targetLanguage" v-model="selectedTargetLanguage" required>
-                <option v-for="language in languages" :key="language.id" :value="language.id">
-                    {{ language.language_name }}
-                </option>
-            </select>
-
-            <label for="translation">Traduction :</label>
-            <input type="text" id="translation" v-model="translation" required />
-
-            <button type="submit">Ajouter</button>
-        </form>
+    <div>
+        <h1>Ajouter un mot</h1>
+        <label for="word">Mot :</label>
+        <input type="text" id="word" v-model="word" />
+        <label for="sourceLanguage">Langue :</label>
+        <select id="sourceLanguage" v-model="selectedSourceLanguage">
+            <option v-for="language in languages" :key="language.id" :value="language.id">
+                {{ language.language_name }}
+            </option>
+        </select>
+        <button @click="addWord">Ajouter le mot</button>
+        <AddTranslation />
     </div>
 </template>
 
 
 <script>
 import axios from 'axios';
+import AddTranslation from './AddTranslation.vue';
 
 export default {
+    components: {
+        AddTranslation
+    },
     data() {
         return {
             languages: [],
-            selectedSourceLanguage: null,
+            selectedSourceLanguage: 1,
             selectedTargetLanguage: null,
             word: '',
             translation: '',
@@ -51,36 +42,30 @@ export default {
             }
         },
 
-        async addWordAndTranslations() {
+        async addWord() {
+            console.log(this.selectedSourceLanguage,this.word);
             try {
-                if (this.selectedSourceLanguage === this.selectedTargetLanguage) {
-                    alert("La langue source et la langue cible ne peuvent pas être les mêmes.");
-                    return;
-                }
-
                 const payload = {
-                    sourceLanguageId: this.selectedSourceLanguage,
-                    targetLanguageId: this.selectedTargetLanguage,
-                    word: this.word,
-                    translation: this.translation
+                    languageId: this.selectedSourceLanguage, // Changez cette ligne
+                    word: this.word
                 };
 
                 const response = await axios.post('http://localhost:3001/api/add-word', payload);
 
                 if (response.data.success) {
-                    alert("Le mot et ses traductions ont été ajoutés avec succès.");
+                    alert("Le mot a été ajouté avec succès.");
                     this.word = '';
-                    this.translation = '';
                 } else {
-                    alert("Une erreur s'est produite lors de l'ajout du mot et de ses traductions.");
+                    alert("Une erreur s'est produite lors de l'ajout du mot.");
                 }
             } catch (error) {
-                console.error('Error adding word and translations:', error);
+                console.error('Error adding word:', error);
             }
         },
     },
     mounted() {
         this.fetchLanguages();
+        
     }
 
 };
