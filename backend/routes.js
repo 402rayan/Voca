@@ -189,7 +189,7 @@ router.post('/api/login', async (req, res) => {
         }
 
         const user = results[0];
-        const passwordMatch = bcrypt.compare(password, user.password);
+        const passwordMatch = await bcrypt.compare(password, user.password);
 
         if (!passwordMatch) {
             res.status(401).json({ error: 'Invalid credentials' });
@@ -203,7 +203,13 @@ router.post('/api/login', async (req, res) => {
             { expiresIn: '1h' } // Durée de vie du token, à ajuster selon vos besoins
         );
 
-        res.json({ token });
+        const userResponse = {
+            id: user.id,
+            username: user.username,
+            // ajoutez d'autres propriétés si nécessaire
+        };
+
+        res.json({ token, user: userResponse });
     });
 
 });
@@ -277,6 +283,101 @@ router.post('/api/add-translation', async (req, res) => {
 
         res.json({ success: true });
     });
+});
+
+router.get('/api/random-words', (req, res) => {
+    const languageId = req.query.languageId;
+    const count = parseInt(req.query.count, 10) || 3;
+
+    const query = `
+    SELECT translation
+    FROM translations
+    WHERE language_id = ?
+    ORDER BY RAND()
+    LIMIT ?
+  `;
+
+    db.query(query, [languageId, count], (err, results) => {
+        if (err) {
+            console.error('Error fetching random words:', err);
+            res.status(500).json({ error: 'Error fetching random words' });
+            return;
+        }
+
+        res.json(results);
+    });
+});
+
+router.get('/api/user/progress', async (req, res) => {
+    const languageId = req.query.sourceLanguageId;
+    const userId = req.query.userId;
+
+    if (!languageId || !userId) {
+        res.status(400).json({ error: 'Les champs "sourceLanguageId" et "userId" sont obligatoires.' });
+        return;
+    }
+
+    const findProgressQuery = `
+    SELECT progress
+    FROM user_progress
+    WHERE user_id = ? AND language_id = ?
+  `;
+
+    const createProgressQuery = `
+    INSERT INTO user_progress (user_id, language_id, progress)
+    VALUES (?, ?, ?)
+  `;
+
+    try {
+        const [progressResult] = await db.promise().query(findProgressQuery, [userId, languageId]);
+
+        if (progressResult.length > 0) {
+            res.json({ progress: progressResult[0].progress });
+        } else {
+            const initialProgress = 0;
+            await db.promise().query(createProgressQuery, [userId, languageId, initialProgress]);
+            res.json({ progress: initialProgress });
+        }
+    } catch (err) {
+        console.error('Error fetching or creating user progress:', err);
+        res.status(500).json({ error: 'Error fetching or creating user progress' });
+    }
+});
+
+
+router.get('/api/user', async (req, res) => {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
+
+    if (!token) {
+        return res.status(401).json({ error: 'Token manquant' });
+    }
+
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const userId = decoded.userId;
+
+        const userQuery = 'SELECT id, username, user_email FROM users WHERE id = ?';
+        db.query(userQuery, [userId], (err, results) => {
+            if (err) {
+                console.error('Erreur lors de la récupération de l\'utilisateur:', err);
+                res.status(500).json({ error: 'Erreur lors de la récupération de l\'utilisateur' });
+                return;
+            }
+
+            if (results.length === 0) {
+                res.status(404).json({ error: 'Utilisateur introuvable' });
+                return;
+            }
+
+            const user = results[0];
+            res.json(user);
+        });
+
+    } catch (error) {
+        console.error('Erreur lors de la vérification du token:', error);
+        res.status(403).json({ error: 'Token invalide' });
+    }
 });
 
 module.exports = router;
