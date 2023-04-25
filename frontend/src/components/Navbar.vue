@@ -27,7 +27,6 @@
                     </li>
                     <li v-if="user" class="nav-item">
                         <div class="user-profile">
-                            <img class="user-avatar" :src="user" alt="User avatar" />
                             <p class="user-name">{{ user.username }}</p>
                         </div>
                     </li>
@@ -39,7 +38,6 @@
 
 <script>
 import axios from 'axios';
-import { VueCookieNext } from 'vue-cookie-next';
 
 export default {
     name: 'NavbarVue',
@@ -58,10 +56,12 @@ export default {
     if (token) {
         try {
             // Make a request to the server to retrieve the user information
-            const response = await axios.get('/api/user', {
+            console.log('je fais une requete pour avoir les infos de l\'utilisateur');
+            const response = await axios.get('http://localhost:3001/api/user/', {
                 headers: { Authorization: `Bearer ${token}` },
             });
             this.user = response.data;
+            console.log('user', this.user);
         } catch (error) {
             console.error('Error retrieving user information:', error);
         }
@@ -79,8 +79,10 @@ export default {
 
                 // Set the user data and token as a local storage item
                 this.user = response.data.user;
+                localStorage.clear();
                 const token = response.data.token;
                 localStorage.setItem('authToken', token);
+                localStorage.setItem('user', this.user);
 
 
                 // Clear the login form
@@ -94,7 +96,7 @@ export default {
 
         logout() {
             // Remove the token cookie and user data
-            VueCookieNext.removeCookie('token');
+            localStorage.clear();
             this.user = null;
         },
     },

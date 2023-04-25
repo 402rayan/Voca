@@ -260,24 +260,26 @@ router.get('/api/words', (req, res) => {
 
 router.post('/api/add-word', async (req, res) => {
     const { word, languageId } = req.body;
-
+  
     if (!word || !languageId) {
-        res.status(400).json({ error: "Les champs 'word' et 'languageId' sont obligatoires." });
-        return;
+      res.status(400).json({ error: "Les champs 'word' et 'languageId' sont obligatoires." });
+      return;
     }
-
+  
     const query = 'INSERT INTO words (language_id, word) VALUES (?, ?)';
-
-    db.query(query, [languageId, word], (err) => {
-        if (err) {
-            console.error('Error adding word:', err);
-            res.status(500).json({ success: false });
-            return;
-        }
-
-        res.json({ success: true });
+  
+    db.query(query, [languageId, word], (err, result) => {
+      if (err) {
+        console.error('Error adding word:', err);
+        res.status(500).json({ success: false });
+        return;
+      }
+  
+      // Renvoyer l'ID du mot ajouté dans la réponse
+      res.json({ success: true, wordId: result.insertId });
     });
-});
+  });
+  
 
 router.post('/api/add-translation', async (req, res) => {
     const { wordId, targetLanguageId, translation } = req.body;
@@ -411,6 +413,30 @@ router.get('/api/user', authenticateToken, async (req, res) => {
 });
 
 
+router.get('/api/translations', async (req, res) => {
+    const wordId = req.query.wordId;
+  
+    if (!wordId) {
+      res.status(400).json({ error: "Le paramètre 'wordId' est obligatoire." });
+      return;
+    }
+  
+    const query = `
+      SELECT * FROM translations WHERE word_id = ?
+    `;
+  
+    db.query(query, [wordId], (err, results) => {
+      if (err) {
+        console.error('Error fetching translations:', err);
+        res.status(500).json({ error: 'Error fetching translations' });
+        return;
+      }
+  
+      res.json(results);
+    });
+  });
+
+  
 module.exports = router;
 
 

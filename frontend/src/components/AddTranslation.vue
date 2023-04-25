@@ -16,6 +16,12 @@
             </option>
         </select>
         <button @click="addTranslation">Ajouter la traduction</button>
+        <ul>
+            <li v-for="translation in translations" :key="translation.id">
+                {{ translation.translation }} <span class="flag-icon" :class="`flag-icon-${getLanguageCode(translation.language_id)}`"></span>
+            </li>
+            {{  }}
+        </ul>
     </div>
 </template>
 
@@ -29,6 +35,7 @@ export default {
             selectedWord: 1,
             translation: '',
             selectedTargetLanguage: 1,
+            translations: [],
         };
     },
     async created() {
@@ -52,6 +59,18 @@ export default {
                 console.error('Error fetching languages:', error);
             }
         },
+        async fetchTranslations() {
+            try {
+                const response = await axios.get(`http://localhost:3001/api/translations?wordId=${this.selectedWord}`);
+                this.translations = response.data;
+            } catch (error) {
+                console.error('Error fetching translations:', error);
+            }
+        },
+        getLanguageCode(languageId) {
+            const language = this.languages.find(lang => lang.id == languageId);
+            return language ? language.language_code.toLowerCase() : '';
+        },
         async addTranslation() {
             try {
                 const payload = {
@@ -61,10 +80,10 @@ export default {
                 };
 
                 const response = await axios.post('http://localhost:3001/api/add-translation', payload);
-
                 if (response.data.success) {
                     alert("La traduction a été ajoutée avec succès.");
                     this.translation = '';
+                    await this.fetchTranslations(); // Rafraîchir la liste des traductions après l'ajout
                 } else {
                     alert("Une erreur s'est produite lors de l'ajout de la traduction.");
                 }
@@ -72,6 +91,14 @@ export default {
                 console.error('Error adding translation:', error);
             }
         }
+    },
+    watch: {
+        selectedWord: {
+            handler() {
+                this.fetchTranslations();
+            },
+            immediate: true,
+        },
     }
 };
 </script>
