@@ -8,9 +8,6 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarContent">
-                <ul class="navbar-nav mr-auto">
-                    <!-- Ajoutez d'autres liens de navigation ici si nécessaire -->
-                </ul>
                 <ul class="navbar-nav">
                     <li v-if="!user" class="nav-item">
                         <router-link class="nav-link" to="/register">S'inscrire</router-link>
@@ -19,7 +16,7 @@
                         <div class="login-container">
                             <input v-model="username" type="text" placeholder="Nom d'utilisateur" />
                             <input v-model="password" type="password" placeholder="Mot de passe" />
-                            <button @click="login">Connexion</button>
+                            <button @click="handleLogin">Connexion</button>
                         </div>
                     </li>
                     <li v-if="user" class="nav-item">
@@ -40,70 +37,66 @@
     </nav>
 </template>
 
-
 <script>
-import { mapState } from 'vuex';
+import axios from 'axios';
+import { VueCookieNext } from 'vue-cookie-next';
 
 export default {
     name: 'NavbarVue',
     data() {
         return {
+            user: null,
             username: '',
             password: '',
         };
     },
-    computed: {
-        ...mapState(['user']),
-    },
+    async mounted() {
+
+    // Check if the token is present in local storage
+    const token = localStorage.getItem('authToken');
+
+    if (token) {
+        try {
+            // Make a request to the server to retrieve the user information
+            const response = await axios.get('/api/user', {
+                headers: { Authorization: `Bearer ${token}` },
+            });
+            this.user = response.data;
+        } catch (error) {
+            console.error('Error retrieving user information:', error);
+        }
+    }
+},
+
+
     methods: {
-        async login() {
-            console.log("jessaie de login");
-            console.log(this.$store);
+        async handleLogin() {
             try {
-                await this.$store.dispatch('loginUser', {
+                const response = await axios.post('/api/login', {
                     username: this.username,
                     password: this.password,
-                    
                 });
+
+                // Set the user data and token as a local storage item
+                this.user = response.data.user;
+                const token = response.data.token;
+                localStorage.setItem('authToken', token);
+
+
+                // Clear the login form
+                this.username = '';
+                this.password = '';
             } catch (error) {
-                console.error('Erreur lors de la connexion:', error);
-                alert(`Erreur lors de la connexion: ${error.response.data.errorMessage}`);
+                console.error('Error logging in:', error);
             }
         },
+
+
         logout() {
-            this.$store.dispatch('logoutUser');
-            this.$router.push('/');
+            // Remove the token cookie and user data
+            VueCookieNext.removeCookie('token');
+            this.user = null;
         },
-    },
-    created() {
-        this.$store.dispatch('loadUserFromLocalStorage');
-        this.$store.commit('setUser', JSON.parse(localStorage.getItem('user')));
-        this.$store.commit('setAuthToken', localStorage.getItem('authToken'));
     },
 };
 </script>
-
-<style scoped>
-/* Votre style pour la navbar et les éléments de connexion */
-
-/* Navbar.vue */
-.user-profile {
-    display: flex;
-    align-items: center;
-    padding: 0 1rem;
-}
-
-.user-avatar {
-    width: 40px;
-    height: 40px;
-    margin-right: 0.5rem;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.user-name {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin: 0;
-}
-</style>

@@ -8,6 +8,17 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const secret = process.env.JWT_SECRET; // Assurez-vous de définir cette variable d'environnement
 
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.json(),
+  defaultMeta: { service: 'user-service' },
+  transports: [
+    new winston.transports.File({ filename: 'error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'combined.log' })
+  ]
+});
 
 router.get('/api/word-to-guess', (req, res) => {
     const sourceLanguageId = req.query.sourceLanguageId;
@@ -200,7 +211,7 @@ router.post('/api/login', async (req, res) => {
         const token = jwt.sign(
             { userId: user.id, username: user.username },
             process.env.JWT_SECRET,
-            { expiresIn: '1h' } // Durée de vie du token, à ajuster selon vos besoins
+            { expiresIn: '3h' } // Durée de vie du token, à ajuster selon vos besoins
         );
 
         const userResponse = {
@@ -209,10 +220,14 @@ router.post('/api/login', async (req, res) => {
             // ajoutez d'autres propriétés si nécessaire
         };
 
+        // Store the token in a cookie with a 3 hour expiration time
+        res.cookie('token', token, { maxAge: 3 * 60 * 60 * 1000, httpOnly: true });
+
         res.json({ token, user: userResponse });
     });
 
 });
+
 
 
 router.get('/api/languages', (req, res) => {
@@ -330,7 +345,6 @@ router.get('/api/user/progress', async (req, res) => {
 
     try {
         const [progressResult] = await db.promise().query(findProgressQuery, [userId, languageId]);
-
         if (progressResult.length > 0) {
             res.json({ progress: progressResult[0].progress });
         } else {
@@ -344,41 +358,58 @@ router.get('/api/user/progress', async (req, res) => {
     }
 });
 
-
-router.get('/api/user', async (req, res) => {
+function authenticateToken(req, res, next) {
     const authHeader = req.headers['authorization'];
+    
     const token = authHeader && authHeader.split(' ')[1];
+    logger.info('Authorization header: ' + token);
 
-    if (!token) {
-        return res.status(401).json({ error: 'Token manquant' });
+
+    if (token == null) {
+        logger.info('Pas de token');
+        return res.status(401).json({ error: 'Unauthorized' });
+        
     }
 
-    try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        const userId = decoded.userId;
+    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+        if (err) {
+            logger.info('Token invalide');
+            return res.status(403).json({ error: 'Invalid token' });
+        }
+        logger.info('On continue à la suite');
+        req.user = user;
+        next();
+    });
+}
+router.get('/api/user', authenticateToken, async (req, res) => {
+    const userId = req.user.userId;
 
-        const userQuery = 'SELECT id, username, user_email FROM users WHERE id = ?';
-        db.query(userQuery, [userId], (err, results) => {
-            if (err) {
-                console.error('Erreur lors de la récupération de l\'utilisateur:', err);
-                res.status(500).json({ error: 'Erreur lors de la récupération de l\'utilisateur' });
-                return;
-            }
 
-            if (results.length === 0) {
-                res.status(404).json({ error: 'Utilisateur introuvable' });
-                return;
-            }
+    // Retrieve the user information from the database
+    const userQuery = 'SELECT * FROM users WHERE id = ?';
+    db.query(userQuery, [userId], async (err, results) => {
+        if (err) {
+            console.error('Error fetching user:', err);
+            res.status(500).json({ error: 'Error fetching user' });
+            return;
+        }
 
-            const user = results[0];
-            res.json(user);
-        });
+        if (results.length === 0) {
+            res.status(404).json({ error: 'User not found' });
+            return;
+        }
 
-    } catch (error) {
-        console.error('Erreur lors de la vérification du token:', error);
-        res.status(403).json({ error: 'Token invalide' });
-    }
+        const user = results[0];
+        const userResponse = {
+            id: user.id,
+            username: user.username,
+            // add other properties as needed
+        };
+
+        res.json(userResponse);
+    });
 });
+
 
 module.exports = router;
 

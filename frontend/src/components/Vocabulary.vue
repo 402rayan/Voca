@@ -73,8 +73,8 @@ export default {
     methods: {
         async fetchLanguages() {
             try {
-                const response = await axios.get('http://localhost:3001/api/languages');
-                this.languages = response.data;
+                                        const response = await axios.get('http://localhost:3001/api/languages');
+                                        this.languages = response.data;
                 this.selectedSourceLanguage = this.languages.find((language) => language.language_code === 'gb').id;
                 this.selectedTargetLanguage = this.languages.find((language) => language.language_code === 'fr').id;
             } catch (error) {
@@ -168,9 +168,8 @@ export default {
             return language ? language.language_name : '';
         },
         async fetchUserProgress() {
-            console.log(this.$store);
             if (!this.$store.state.user) {
-                console.warn('User not logged in');
+                console.warn('User not logged in, I dont fetch progress');
                 return;
             }
             console.log("je recheche la progress");

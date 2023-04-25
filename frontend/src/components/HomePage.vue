@@ -1,13 +1,13 @@
 <template>
     <div>
         <h2>Apprenez une nouvelle langue avec Voca</h2>
-        <div v-if="!loggedIn">
+        <div v-if="test">
             <p>Connectez-vous avec Google pour suivre vos progrès :</p>
             
             <a href="/auth/google">Se connecter avec Google</a>
         </div>
         <div v-else>
-            <p>Bienvenue, {{ user.displayName }} !</p>
+            <!--<p v-if="user">Bienvenue, {{ user.displayName }} !</p>-->
             <p>Choisissez une option pour commencer :</p>
             <button @click="learnAlphabets">Apprendre des alphabets</button>
             <button @click="learnVocabulary">Apprendre du vocabulaire</button>
@@ -20,24 +20,10 @@
 export default {
     data() {
         return {
-            loggedIn: false,
-            user: {},
+            test : false,
         };
     },
-    created() {
-        this.checkLoggedIn();
-    },
     methods: {
-        async checkLoggedIn() {
-            // Vérifie si l'utilisateur est connecté (vous devrez implémenter cette route côté back-end)
-            const response = await fetch('/api/user');
-            console.log("la reponse est : ");
-            console.log(response);
-            if (response.ok) {
-                this.user = await response.json();
-                this.loggedIn = true;
-            }
-        },
         learnAlphabets() {
             this.$router.push('/alphabets');
         },
