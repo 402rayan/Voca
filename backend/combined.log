@@ -294,3 +294,5 @@
 {"level":"info","message":"On continue à la suite","service":"user-service"}
 {"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjQzNDY0MiwiZXhwIjoxNjgyNDQ1NDQyfQ.aF1Tvp7B5mjGZqFpFT2UR6x14L1tfBBlOZq_AU04R0s","service":"user-service"}
 {"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjQzNTEyNiwiZXhwIjoxNjgyNDQ1OTI2fQ.BIf6IOAL1c5Ae8g-t6LbZJ7EFIYyOP7_U3BCxnjSA24","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
