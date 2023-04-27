@@ -3,6 +3,18 @@
     <Navbar />
     <router-view></router-view>
   </div>
+  <footer>
+    <div class="ligne-footer"></div>
+    <div class="footer-content">
+      <p>Website made by DESPLANQUE-HAMADACHE Rayan</p>
+      <div class="social-icons">
+        <div class="social-icon" style="background-color: var(--main-beige);"></div>
+        <div class="social-icon" style="background-color: var(--secondary-violet);"></div>
+        <div class="social-icon" style="background-color: var(--primary-violet);"></div>
+        <div class="social-icon" style="background-color: var(--main-violet);"></div>
+      </div>
+    </div>
+  </footer>
 </template>
 
 <script>
@@ -17,6 +29,114 @@ export default {
 </script>
 
 <style>
+:root {
+    --light-beige: #fef8f0;
+    --main-violet: #9384D1;
+    --primary-violet: #C9A7EB;
+    --secondary-violet: #ECC9EE;
+    --main-beige: #FFDCB6;
+    --dark-gris: #282828;
+
+}
+@font-face {
+  font-family: 'DIN Pro-Bold';
+  src: url('./assets/fonts/DINPro-Bold.eot') format('embedded-opentype'),
+    url('./assets/fonts/DINPro-Bold.woff') format('woff'),
+    url('./assets/fonts/DINPro-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DIN Pro-Medium';
+  src: url('./assets/fonts/DINPro-Medium.eot') format('embedded-opentype'),
+    url('./assets/fonts/DINPro-Medium.woff') format('woff'),
+    url('./assets/fonts/DINPro-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Whyte Medium';
+  src: url('./assets/fonts/Whyte-Medium.eot') format('embedded-opentype'),
+    url('./assets/fonts/Whyte-Medium.woff') format('woff'),
+    url('./assets/fonts/Whyte-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DIN Round Pro';
+  src: url('./assets/fonts/DINRoundPro.eot') format('embedded-opentype'),
+    url('./assets/fonts/DINRoundPro.woff') format('woff'),
+    url('./assets/fonts/DINRoundPro.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DINRoundPro-Bold';
+  src: url('./assets/fonts/DINRoundPro-Bold.eot') format('embedded-opentype'),
+    url('./assets/fonts/DINRoundPro-Bold.woff') format('woff'),
+    url('./assets/fonts/DINRoundPro-Bold.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DIN Pro-Bold';
+  src: url('./assets/fonts/DINPro-Bold.eot') format('embedded-opentype'),
+    url('./assets/fonts/DINPro-Bold.woff') format('woff'),
+    url('./assets/fonts/DINPro-Bold.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'DINRoundPro-Light';
+  src: url('./assets/fonts/DINRoundPro-Light.eot') format('embedded-opentype'),
+    url('./assets/fonts/DINRoundPro-Light.woff') format('woff'),
+    url('./assets/fonts/DINRoundPro-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'DINRoundPro-Medium';
+  src: url('./assets/fonts/DINRoundPro-Medi.eot') format('embedded-opentype'),
+    url('./assets/fonts/DINRoundPro-Medi.woff') format('woff'),
+    url('./assets/fonts/DINRoundPro-Medi.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'DINPro-MediumItalic';
+  src: url('./assets/fonts/DINPro-MediumItalic.eot') format('embedded-opentype'),
+    url('./assets/fonts/DINPro-MediumItalic.woff') format('woff'),
+    url('./assets/fonts/DINPro-MediumItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+.fil-arianne {
+    font-family: "DINRoundPro-Medium";
+    font-size: 29px;
+    color : #9E9E9E;
+    text-align: center;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    padding: 0 10%;
+    text-align: initial;
+
+}
+.fil-arianne a {
+  text-decoration: underline;
+  text-decoration-color: rgb(227, 227, 227);
+  color : #9E9E9E;
+}
+.fil-arianne a:hover {
+  text-decoration: underline;
+  color : #7a7a7a;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -37,4 +157,55 @@ nav a {
 nav a.router-link-exact-active {
   color: #42b983;
 }
-</style>
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.footer-content p {
+  flex-grow: 1;
+  margin: 0;
+  font-family : 'DINRoundPro-Light';
+  color : black;
+  font-size: 19px;
+}
+
+.ligne-footer {
+  border-bottom: 1px solid #BEBEBE;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 50%;
+  margin: 0 auto;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #F7F7F7;
+}
+
+.social-icons {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}</style>

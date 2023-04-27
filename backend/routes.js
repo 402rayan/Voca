@@ -110,12 +110,12 @@ router.post('/api/check-guess', (req, res) => {
 });
 
 
-router.post('/api/register', (req, res) => {
+router.post('/api/register', async (req, res) => {
     const { username, email, password } = req.body;
-    /* Contraintes */
+    // Contraintes
 
     if (!username || !email || !password) {
-        res.status(400).json({ error: 'Tous les champs (nom d\'utilisateur, email et mot de passe) sont obligatoires.' });
+        res.status(400).json({ error: "Tous les champs (nom d'utilisateur, email et mot de passe) sont obligatoires." });
         return;
     }
     if (password.length < 8) {
@@ -123,71 +123,52 @@ router.post('/api/register', (req, res) => {
         return;
     }
     const checkUsernameAndEmailQuery = `
-  SELECT * FROM users WHERE username = ? OR user_email = ?;
-`;
+        SELECT * FROM users WHERE username = ? OR user_email = ?;
+    `;
 
-    db.query(checkUsernameAndEmailQuery, [username, email], (err, results) => {
-        if (err) {
-            console.error('Erreur lors de la vérification du nom d\'utilisateur et de l\'email:', err);
-            res.status(500).json({ error: 'Erreur lors de la vérification du nom d\'utilisateur et de l\'email.' });
-            return;
-        }
+    try {
+        const [results] = await db.promise().query(checkUsernameAndEmailQuery, [username, email]);
 
         if (results.length > 0) {
-            res.status(400).json({ error: 'Le nom d\'utilisateur ou l\'email est déjà utilisé.' });
+            res.status(400).json({ error: "Le nom d'utilisateur ou l'email est déjà utilisé." });
             return;
         }
 
-        // Ajoutez ici la logique d'insertion de l'utilisateur.
+        // Hachez le mot de passe
+        const saltRounds = 10;
+        const hashedPassword = await bcrypt.hash(password, saltRounds);
 
-        
+        const query = `
+            INSERT INTO users (username, user_email, password)
+            VALUES (?, ?, ?);
+        `;
 
-    });
+        const [result] = await db.promise().query(query, [username, email, hashedPassword]);
 
-    (async () => {
-        try {
-            // Hachez le mot de passe
-            const saltRounds = 10;
-            const hashedPassword = await bcrypt.hash(password, saltRounds);
+        // Créez un JWT pour l'utilisateur nouvellement inscrit
+        const payload = {
+            userId: result.insertId,
+            username,
+            email
+        };
 
-            const query = `
-                INSERT INTO users (username, user_email, password)
-                VALUES (?, ?, ?);
-            `;
+        const token = jwt.sign(payload, process.env.JWT_SECRET, {
+            expiresIn: '1h'
+        });
 
-            db.query(query, [username, email, hashedPassword], (err, result) => {
-                if (err) {
-                    console.error('Erreur lors de l\'inscription:', err);
-                    res.status(500).json({ error: 'Erreur lors de l\'inscription' });
-                    return;
-                }
-
-                // Créez un JWT pour l'utilisateur nouvellement inscrit
-                const payload = {
-                    userId: result.insertId,
-                    username,
-                    email
-                };
-
-                const token = jwt.sign(payload, process.env.JWT_SECRET, {
-                    expiresIn: '1h'
-                });
-
-                res.status(201).json({ message: 'Inscription réussie', token });
-            });
-        } catch (err) {
-            console.error('Erreur lors du hachage du mot de passe:', err);
-            res.status(500).json({ error: 'Erreur lors du hachage du mot de passe' });
-        }
-    })();
+        res.status(201).json({ message: 'Inscription réussie', token });
+    } catch (err) {
+        console.error('Erreur lors de l\'inscription:', err);
+        res.status(500).json({ error: 'Erreur lors de l\'inscription' });
+    }
 });
 
 router.post('/api/login', async (req, res) => {
     const { username, password } = req.body;
 
     // TODO: Valider les identifiants et générer un JWT
-    const userQuery = 'SELECT * FROM users WHERE username = ?';
-    db.query(userQuery, [username], async (err, results) => {
+    const userQuery = 'SELECT * FROM users WHERE username = ? OR user_email = ?;';
+    db.query(userQuery, [username,username], async (err, results) => {
         if (err) {
             console.error('Error fetching user:', err);
             res.status(500).json({ error: 'Error fetching user' });

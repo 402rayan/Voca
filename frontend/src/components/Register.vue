@@ -1,22 +1,15 @@
 <template>
-    <div class="register-container">
-        <h2>Inscription</h2>
-        <form @submit.prevent="register">
-            <div class="form-group">
-                <label for="username">Nom d'utilisateur</label>
-                <input v-model="username" type="text" class="form-control" id="username" required>
+    <div class="fil-arianne"><RouterLink to="/" >home</RouterLink> > register</div>
+    <form @submit.prevent="register" class="wrapper">
+            <div class="register-form">
+                <input v-model="username" type="text" placeholder="Nom d'utilisateur">
+                <input v-model="email" type="email" placeholder="E-mail">
+                <input v-model="password" type="password" placeholder="Mot de passe">
+                <button type="submit" class="register-button">S'inscrire</button>
+                <div class="register-line"></div>
+                <button class="register-google-button">S'inscrire avec Google</button>
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input v-model="email" type="email" class="form-control" id="email" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Mot de passe</label>
-                <input v-model="password" type="password" class="form-control" id="password" required>
-            </div>
-            <button type="submit" class="btn btn-primary">S'inscrire</button>
         </form>
-    </div>
 </template>
 
 <script>
@@ -31,6 +24,13 @@ export default {
             password: '',
         };
     },
+    mounted:
+        function () {
+            if (localStorage.getItem('authToken')) {
+                this.$router.push('/');
+            }
+        },
+        
     methods: {
         register() {
             axios
@@ -68,4 +68,92 @@ export default {
     margin: 0 auto;
     padding-top: 50px;
 }
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    width: 25%;
+    height: 70%;
+    padding: 24px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    height:13%;
+    margin: 8px 0;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid #ADADAD;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #F4F4F4;
+    font-size: 20px;
+    font-family: "DINRoundPro-Bold";
+    font-weight: bold;
+    color: var(--dark-gris);
+    outline: none;
+}
+
+input::placeholder {
+    color: #ADADAD;
+}
+
+button {
+    margin: 16px 0;
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.register-button {
+    text-decoration: none;
+    font-weight: normal;
+    background-color: var(--main-violet);
+    border-radius: 18px;
+    border: 1px #A0A0A0 solid;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-family: 'Whyte Medium';
+    font-size: 22px;
+}
+
+.register-google-button {
+    text-decoration: none;
+    font-weight: normal;
+    background-color: var(--main-beige);
+    border-radius: 18px;
+    border: 1px #cbcbcb solid;
+    box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
+    color: var(--dark-gris);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-family: 'Whyte Medium';
+    font-size: 22px;
+}
+
+.register-line {
+    width: 100%;
+    height: 1px;
+    background-color: #b6b6b6;
+    margin: 16px 0;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
 </style>

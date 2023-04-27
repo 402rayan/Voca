@@ -1,44 +1,105 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <router-link class="navbar-brand" to="/">Voca</router-link>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
-                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarContent">
-                <ul class="navbar-nav">
-                    <li v-if="!user" class="nav-item">
-                        <router-link class="nav-link" to="/register">S'inscrire</router-link>
-                    </li>
-                    <li v-if="!user" class="nav-item">
-                        <div class="login-container">
-                            <input v-model="username" type="text" placeholder="Nom d'utilisateur" />
-                            <input v-model="password" type="password" placeholder="Mot de passe" />
-                            <button @click="handleLogin">Connexion</button>
-                        </div>
-                    </li>
-                    <li v-if="user" class="nav-item">
-                        <a class="nav-link" href="#" @click.prevent="logout">Se déconnecter</a>
-                    </li>
-                    <li class="nav-item">
-                        <router-link class="nav-link" to="/add-word">Ajouter un mot</router-link>
-                    </li>
-                    <li v-if="user" class="nav-item">
-                        <div class="user-profile">
-                            <p class="user-name">{{ user.username }}</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+    <nav class="navbarVoca">
+        
+        <router-link class="logo" to="/">
+            <img id="logo" src="../assets/images/final_voca.png">
+        </router-link>
+        <div v-if="!user" class="nav-buttons">
+            <router-link class="connexion-button" to="/login">Connexion</router-link>
+            <router-link class="inscription-button" to="/register">Inscription</router-link>
         </div>
+        <div v-else class="nav-user">
+                <h1>{{ user.username }}</h1>
+                <a class="nav-link" href="#" @click.prevent="logout">Se déconnecter</a>
+            </div>
     </nav>
-</template>
+    <div class="ligne"></div>
 
+</template>
+<style scoped>
+
+
+.ligne {
+    border-bottom: 1px solid #BEBEBE;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    width: 80%;
+    margin: 0 auto;
+}
+.connexion-button {
+    background-color: rgba(255, 255, 255, 0);
+    font-weight: normal;
+    text-decoration: none;
+    border-radius: 18px;
+    border: 0px #B4B4B4 solid;
+    text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    /*box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);*/
+    color: var(--dark-gris);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-family: 'Whyte Medium';
+    width: 261px;
+    height: 68px;
+    font-size: 40px;
+}
+
+.inscription-button {
+    text-decoration: none;
+    font-weight: normal;
+    background-color: var(--main-violet);
+    border-radius: 18px;
+    border: 1px #A0A0A0 solid;
+    text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-family: 'Whyte Medium';
+    width: 261px;
+    height: 68px;
+    font-size: 40px;
+}
+
+.navbarVoca {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    /* hauteur de votre navbar */
+    background-color: #ffffff;
+    /* couleur de fond de votre navbar */
+    padding: 0 20px;
+    /* espacement intérieur de votre navbar */
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+    /* espacement entre les deux boutons */
+}
+
+nav .nav-buttons a {
+    display: inline-block;
+    line-height: 70px;
+    /* ajustez la valeur en fonction de la hauteur de votre navbar */
+    vertical-align: middle;
+}
+
+.logo {
+    flex-grow: 0.1;
+    /* le logo prendra tout l'espace restant à gauche */
+}
+
+#logo {
+    width: 250px;
+    /* ajustez la taille en fonction de vos besoins */
+    height: auto;
+    /* permet de maintenir le ratio de l'image */
+}
+</style>
 <script>
 import axios from 'axios';
-
 export default {
     name: 'NavbarVue',
     data() {
@@ -50,55 +111,44 @@ export default {
     },
     async mounted() {
 
-    // Check if the token is present in local storage
-    const token = localStorage.getItem('authToken');
+        await this.checkIfConnected();
 
-    if (token) {
-        try {
-            // Make a request to the server to retrieve the user information
-            console.log('je fais une requete pour avoir les infos de l\'utilisateur');
-            const response = await axios.get('http://localhost:3001/api/user/', {
-                headers: { Authorization: `Bearer ${token}` },
-            });
-            this.user = response.data;
-            console.log('user', this.user);
-        } catch (error) {
-            console.error('Error retrieving user information:', error);
+        
+    },
+
+    watch: {
+        user() {
+            console.log('User changed:', this.user);
         }
-    }
-},
-
-
+    },
     methods: {
-        async handleLogin() {
-            try {
-                const response = await axios.post('/api/login', {
-                    username: this.username,
-                    password: this.password,
-                });
-
-                // Set the user data and token as a local storage item
-                this.user = response.data.user;
-                localStorage.clear();
-                const token = response.data.token;
-                localStorage.setItem('authToken', token);
-                localStorage.setItem('user', this.user);
-
-
-                // Clear the login form
-                this.username = '';
-                this.password = '';
-            } catch (error) {
-                console.error('Error logging in:', error);
-            }
-        },
-
 
         logout() {
             // Remove the token cookie and user data
             localStorage.clear();
             this.user = null;
         },
+        
+        async checkIfConnected() {
+            const token = localStorage.getItem('authToken');
+            console.log('je cherche le token dans le local storage');
+
+            if (token) {
+                try {
+                    // Make a request to the server to retrieve the user information
+                    console.log('Jai trouvé un token,je fais une requete pour avoir les infos de l\'utilisateur');
+                    const response = await axios.get('http://localhost:3001/api/user/', {
+                        headers: { Authorization: `Bearer ${token}` },
+                    });
+                    this.user = response.data;
+                    console.log('user', this.user);
+                } catch (error) {
+                    console.error('Error retrieving user information:', error);
+                }
+            }
+        }
     },
+    
+    
 };
 </script>

@@ -1,96 +1,85 @@
 <template>
-    <div class="guess-word">
-        <div class="language-selectors">
-            <label for="source-language">Mot en</label>
-            <select id="source-language" v-model="selectedSourceLanguage">
-                <option v-for="language in languages" :key="language.id" :value="language.id">
-                    {{ language.language_name }}
-                </option>
-            </select>
-            <span v-if="selectedSourceLanguage" class="flag-icon"
-                :class="`flag-icon-${getLanguageCode(selectedSourceLanguage)}`"></span>
-            <br />
-            <label for="target-language">Traduire en</label>
-            <select id="target-language" v-model="selectedTargetLanguage">
-                <option v-for="language in languages" :key="language.id" :value="language.id">
-                    {{ language.language_name }}
-                </option>
-            </select>
-            <span v-if="selectedTargetLanguage" class="flag-icon"
-                :class="`flag-icon-${getLanguageCode(selectedTargetLanguage)}`"></span>
-        </div>
-        <!-- Reste du code HTML ... -->
-        <div>
-            <h2>{{ translations[this.selectedSourceLanguage] }}</h2>
-            <!-- Ajoutez 'v-if="mode === 'text'"' pour les éléments suivants -->
-            <input type="text" v-if="mode === 'text'" v-model="guess" @keydown.enter="checkGuess" />
-            <button v-if="mode === 'text'" @click="checkGuess">Valider</button>
-            <p v-if="message">{{ message }}</p>
-            <div style="background-color : #dfdfdf;">
-                <!-- Ajoutez ces lignes pour le bouton de basculement -->
-                <button @click="toggleMode">
-                    {{ mode === 'text' ? 'Passer au mode propositions' : 'Passer au mode texte' }}
-                </button>
-                <!-- ... -->
-                <div v-if="mode === 'choices'">
-                    <button v-for="(choice, index) in choices" :key="index" @click="checkChoice(choice)">
-                        {{ choice }}
-                    </button>
+    <div class="wrapper">
+        <div class="wrapper-word">
+            <div class="espace-langage">
+                <div class="language-selector" @click="toggleLanguageList">
+
+                    <div class="language-flag">
+                        <img v-if="currentLanguage.language_code" :src="getFlagImageUrl(currentLanguage.language_code)"
+                            alt="Language flag" />
+                    </div>
+
+                    <div class="language-name">{{ currentLanguage.language_name }}</div>
+
+                    <ul v-if="showLanguageList" class="language-list" @click.stop>
+                        <li v-for="(language, index) in languages" :key="index" @click="selectLanguage(language)">
+                            <img :src="getFlagImageUrl(language.language_code)" alt="Language flag" />
+                            <div class="language-name">{{ language.language_name }}</div>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <!-- Vocabulary.vue -->
-            
 
+            <div id="word">{{ translations[this.currentLanguage.id]}}</div>
         </div>
-    <div class="progress-container">
-                    <p>Progression en {{ getLanguageName(selectedSourceLanguage) }} :</p>
-                    <div class="progress-bar">
-                        <div class="progress" :style="{ width: `${progress}%` }"></div>
-                    </div>
-                </div>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
-
 export default {
     name: 'VocabularyVue',
     data() {
         return {
-            wordToGuess: '',
-            guess: '',
-            message: '',
-            translations: '',
+            currentLanguage: {
+                name: "English",
+                flag: "https://www.countryflags.io/gb/flat/32.png",
+            },
             languages: [],
-            selectedSourceLanguage: null,
-            selectedTargetLanguage: null,
-            mode: 'text', // Ajoutez cette ligne
-            choices: '',
-            progress: 70,
+            showLanguageList: false,
+            wordToGuess: '',
+            translations: [],
         };
     },
+    mounted() {
+
+        //trouve les languages grâce à fetch languages puis mets le premier language de la liste en currentLanguage
+        this.fetchLanguages().then(() => {
+            this.currentLanguage = this.languages[1];
+            console.log('Current language:', this.currentLanguage);
+            this.fetchWordToGuess(this.currentLanguage.id, this.currentLanguage.id);
+        });
+    },
     methods: {
+        toggleLanguageList() {
+            this.showLanguageList = !this.showLanguageList;
+        },
+        hideLanguageList() {
+            this.showLanguageList = false;
+        },
+        selectLanguage(language) {
+            this.currentLanguage = language;
+            this.showLanguageList = false;
+            console.log('ShowLanguageList:', this.showLanguageList);
+        },
+        getFlagImageUrl(languageCode) {
+            return `https://flagcdn.com/16x12/${languageCode.toLowerCase()}.png`;
+        },
         async fetchLanguages() {
             try {
-                                        const response = await axios.get('http://localhost:3001/api/languages');
-                                        this.languages = response.data;
-                this.selectedSourceLanguage = this.languages.find((language) => language.language_code === 'gb').id;
-                this.selectedTargetLanguage = this.languages.find((language) => language.language_code === 'fr').id;
+                const response = await axios.get('http://localhost:3001/api/languages');
+                this.languages = response.data;
+                console.log('Languages:', this.languages);
             } catch (error) {
                 console.error('Error fetching languages:', error);
             }
         },
-        getLanguageCode(languageId) {
-            const language = this.languages.find((language) => language.id === languageId);
-            return language ? language.language_code : '';
-        },
-        async fetchWordToGuess() {
+        async fetchWordToGuess(langue1,langue2) {
             axios
                 .get(`http://localhost:3001/api/word-to-guess`, {
                     params: {
-                        sourceLanguageId: this.selectedSourceLanguage,
-                        targetLanguageId: this.selectedTargetLanguage,
+                        sourceLanguageId: langue1,
+                        targetLanguageId: langue2,
                     },
                 })
                 .then((response) => {
@@ -105,156 +94,151 @@ export default {
                     this.translations = [];
                 });
         },
-        async checkGuess() {
-            if (this.guess.length < 1) {
-                this.message = "Vous n'avez rien marqué!";
-                return;
-            }
-            axios
-                .post('http://localhost:3001/api/check-guess', {
-                    wordId: this.wordToGuess.id,
-                    targetLanguageId: this.selectedTargetLanguage,
-                    guess: this.guess,
-                })
-                .then((response) => {
-                    const { correct } = response.data;
-                    if (correct) {
-                        this.message = 'Correct!';
-                    } else {
-                        this.message = 'Incorrect!';
-                    }
-                    this.fetchWordToGuess();
-                })
-                .catch((error) => {
-                    console.error('Error checking guess:', error);
-                    this.message = 'Error checking guess';
-                });
-        },
-        toggleMode() {
-            this.mode = this.mode === 'text' ? 'choices' : 'text';
-        },
-        async generateChoices() {
-            const otherWordsCount = 3;
-
-            const otherWords = await this.fetchRandomWords(this.selectedTargetLanguage, otherWordsCount);
-
-            // Extraire les mots de chaque objet de traduction
-            const extractedWords = otherWords.map(obj => obj.translation);
-
-            // Ajoutez la bonne réponse et mélangez les choix
-            this.choices = [this.translations[this.selectedTargetLanguage], ...extractedWords].sort(() => Math.random() - 0.5);
-        },
-
-        checkChoice(choice) {
-            const bonne_reponse = this.translations[this.selectedTargetLanguage];
-            if (choice === bonne_reponse) {
-                this.message = 'Correct!';
-            } else {
-                this.message = 'Incorrect!';
-            }
-            this.fetchWordToGuess();
-        },
-        async fetchRandomWords(languageId, count) {
-            try {
-                const response = await axios.get(`http://localhost:3001/api/random-words?languageId=${languageId}&count=${count}`);
-                return response.data;
-            } catch (error) {
-                console.error('Error fetching random words:', error);
-                return [];
-            }
-        },
-        getLanguageName(languageId) {
-            const language = this.languages.find((language) => language.id === languageId);
-            return language ? language.language_name : '';
-        },
-        async fetchUserProgress() {
-            if (!this.$store.state.user) {
-                console.warn('User not logged in, I dont fetch progress');
-                return;
-            }
-            console.log("je recheche la progress");
-            try {
-                const response = await axios.get('http://localhost:3001/api/user/progress', {
-                    params: {
-                        sourceLanguageId: this.selectedSourceLanguage,
-                        userId: this.$store.state.user.id, 
-                    },
-                });
-
-                this.progress = response.data.progress;
-            } catch (error) {
-                console.error('Error fetching user progress:', error);
-                this.progress = 0;
-            }
-        },
-
-    },
-    watch: {
-        selectedSourceLanguage() {
-            this.fetchWordToGuess();
-            this.fetchUserProgress(); // Ajoutez cette ligne
-        },
-        selectedTargetLanguage() {
-            this.fetchWordToGuess();
-        },
-
-        mode() {
-            if (this.mode === 'choices') {
-                this.generateChoices();
-            }
-        },
-        translations: {
-            handler() {
-                if (this.mode === 'choices') {
-                    this.generateChoices();
-                }
-            },
-            deep: true,
-        },
-    },
-    mounted() {
-        this.fetchLanguages();
-        this.fetchUserProgress(); // Ajoutez cette ligne
     },
 
 };
 </script>
 
 <style scoped>
-.guess-word {
-    text-align: center;
+.espace-langage {
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    background-color :rgba(255, 0, 0, 0);
+    width: 100%;
+    height: 20%;
 }
 
-input {
-    margin: 1rem 0;
-}
+#word {
+    font-family: "DINPro-MediumItalic";
+    font-size: 96px;
+    color: #262626;
 
-.flags-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 1rem;
+    align-items: center;
+
+    height: 55%;
+    background-color : rgba(255, 255, 0, 0);
 }
 
-.flag {
-    margin: 0 0.5rem;
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+
+
+}
+
+.wrapper-word {
+
+    height: 400px;
+    width: 680px;
+    border-radius: 75px;
+    background-color: var(--light-beige);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.language-selector {
+    justify-self: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 250px;
+    height: 50px;
+    border-radius: 27px;
+    background-color: #ffffff;
     cursor: pointer;
 }
-/* Vocabulary.vue */
-.progress-container {
-  margin: 1rem 0;
+
+.language-selector .language-flag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
 }
 
-.progress-bar {
-  width: 100%;
-  height: 20px;
-  background-color: #f2f2f2;
-  border-radius: 8px;
+.language-selector .language-name {
+    font-size: 18px;
 }
 
-.progress {
-  height: 100%;
-  background-color: #4caf50;
-  border-radius: 8px;
+.language-selector .language-list {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
+.language-selector .language-list li {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.language-selector .language-list li:hover {
+    background-color: #f2f2f2;
+}
+
+.language-selector .language-list li img {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+.word-input-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #eeeeee;
+    margin-bottom: 20px;
+}
+
+.word-input-box .language-flag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+.word-input-box .language-name {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.word-input-box input {
+    border: none;
+    outline: none;
+    font-size: 18px;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    background-color: transparent;
+}
+
+.word-input-box input::placeholder {
+    color: #c3c3c3;
+}
+
+.word-input-box input:focus {
+    border: none;
+    outline: none;
+}
 </style>

@@ -5,6 +5,7 @@ import Vocabulary from '../components/Vocabulary.vue';
 import LudicWords from '../components/LudicWords.vue';
 import Register from '../components/Register.vue';
 import AddWord from '../components/AddWord.vue';
+import Login from '../components/Login.vue';
 
 
 const routes = [
@@ -17,6 +18,11 @@ const routes = [
     path: '/register',
     name: 'Register',
     component: Register,
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login,
   },
   {
     path: '/add-word',
@@ -34,7 +40,7 @@ const routes = [
     component: Vocabulary,
   },
   {
-    path: '/ludic-words',
+    path: '/categories',
     name: 'LudicWords',
     component: LudicWords,
   },
