@@ -729,3 +729,235 @@
 {"level":"info","message":"On continue à la suite","service":"user-service"}
 {"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjYwOTA3NywiZXhwIjoxNjgyNjE5ODc3fQ.22evAf25993d3XhTdTwf1oBRkvLk9P3hic-XKPbp9AU","service":"user-service"}
 {"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjYwOTA3NywiZXhwIjoxNjgyNjE5ODc3fQ.22evAf25993d3XhTdTwf1oBRkvLk9P3hic-XKPbp9AU","service":"user-service"}
+{"level":"info","message":"Token invalide","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjYwOTA3NywiZXhwIjoxNjgyNjE5ODc3fQ.22evAf25993d3XhTdTwf1oBRkvLk9P3hic-XKPbp9AU","service":"user-service"}
+{"level":"info","message":"Token invalide","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjYwOTA3NywiZXhwIjoxNjgyNjE5ODc3fQ.22evAf25993d3XhTdTwf1oBRkvLk9P3hic-XKPbp9AU","service":"user-service"}
+{"level":"info","message":"Token invalide","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjYwOTA3NywiZXhwIjoxNjgyNjE5ODc3fQ.22evAf25993d3XhTdTwf1oBRkvLk9P3hic-XKPbp9AU","service":"user-service"}
+{"level":"info","message":"Token invalide","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjYwOTA3NywiZXhwIjoxNjgyNjE5ODc3fQ.22evAf25993d3XhTdTwf1oBRkvLk9P3hic-XKPbp9AU","service":"user-service"}
+{"level":"info","message":"Token invalide","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc1MCwiZXhwIjoxNjgyNjg1NTUwfQ.aP-gpxsCiK1vOq_vnAVyxbYQmuqG0SM2aM_UCkjJYY0","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3NDc2MiwiZXhwIjoxNjgyNjg1NTYyfQ.Evb_TuSHOJk0FbDhTfZmPRKKdR27D5Cxr4YxoVqlqBE","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoiZ2ltcyIsImlhdCI6MTY4MjY3ODU1OSwiZXhwIjoxNjgyNjg5MzU5fQ.wm4LtDMvp1IXKRa9-MvGKNRYCT0xbr8QIHqvrpjo5_w","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoibWlhb3Vzc2UyMTMiLCJpYXQiOjE2ODI2ODE4MTgsImV4cCI6MTY4MjY5MjYxOH0.I-iJdaxWab1niULgCQpbP5FfGk1RJCLj4LKTb_xYML8","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}

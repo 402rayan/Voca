@@ -144,6 +144,8 @@ export default {
                     console.log('user', this.user);
                 } catch (error) {
                     console.error('Error retrieving user information:', error);
+                    // SUpprime tout le local storage
+                    localStorage.clear();
                 }
             }
         }

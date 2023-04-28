@@ -131,7 +131,8 @@ export default {
                 localStorage.clear();
                 const token = response.data.token;
                 localStorage.setItem('authToken', token);
-                localStorage.setItem('user', this.user);
+                // met dans le local storage this.user sous forme de json
+                localStorage.setItem('user', JSON.stringify(this.user));
 
 
                 // Clear the login form

@@ -96,6 +96,14 @@ export default {
   font-style: normal;
 }
 @font-face {
+  font-family: 'DINPro-Light';
+  src: url('./assets/fonts/DINPro-Light.eot') format('embedded-opentype'),
+    url('./assets/fonts/DINPro-Light.woff') format('woff'),
+    url('./assets/fonts/DINPro-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
   font-family: 'DINRoundPro-Medium';
   src: url('./assets/fonts/DINRoundPro-Medi.eot') format('embedded-opentype'),
     url('./assets/fonts/DINRoundPro-Medi.woff') format('woff'),
