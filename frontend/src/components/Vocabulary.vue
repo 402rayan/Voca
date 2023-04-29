@@ -8,18 +8,19 @@
                 <div class="language-selector" @click="toggleSourceLanguageList">
 
                     <div class="language-flag">
-                        <img style="width: 100%;" v-if="sourceLanguage.language_code"
-                            :src="getFlagImageUrl(sourceLanguage.language_code)" alt="Language flag" />
+                        <div :class="'fi fi-' + sourceLanguage.language_code"></div>
                     </div>
 
                     <div class="language-name">{{ sourceLanguage.language_name }}</div>
 
-                    <ul v-if="showSourceLanguageList" class="language-list" @click.stop>
-                        <li style="" v-for="(language, index) in languages" :key="index"
-                            @click="selectSourceLanguage(language)">
-                            <img :src="getFlagImageUrl(language.language_code)" alt="Language flag" />
-                            <div class="language-name">{{ language.language_name }}</div>
+                    <ul style="top : 60px; left: 0" v-if="showSourceLanguageList" class="language-list" @click.stop>
+                        <li v-for="(language, index) in languages" :key="index" @click="selectSourceLanguage(language)">
+                            <div :class="'fi fi-' + language.language_code"></div>
+                            <div class="language-name">{{ language.language_name }}
+                            </div>
+                            <div class="petite-ligne"></div>
                         </li>
+
                     </ul>
                 </div>
             </div>
@@ -31,20 +32,23 @@
                 <div class="targetLanguage" @click="toggleTargetLanguageList">
                     <div class="espace-drapeau">
 
-                        <img v-if="targetLanguage.language_code" :src="getFlagImageUrl(targetLanguage.language_code)"
-                            alt="Language flag" />
+                        <div :class="'fi fi-' + targetLanguage.language_code"></div>
                     </div>
                     <div class="espace-nom">
                         {{ targetLanguage.language_name }}
                     </div>
+                    <ul style="top : -50px; left :-75px; border : 0px" v-if="showTargetLanguageList" class="language-list"
+                        @click.stop>
+                        <li v-for="(language, index) in languages" :key="index" @click="selectTargetLanguage(language)">
+                            <div :class="'fi fi-' + language.language_code"></div>
+                            <div class="language-name">{{ language.language_name }}
+                            </div>
+                            <div class="petite-ligne"></div>
+                        </li>
 
+                    </ul>
                 </div>
-                <ul v-if="showTargetLanguageList">
-                    <li v-for="language in languages" :key="language.language_code" @click="selectTargetLanguage(language)">
-                        <img :src="getFlagImageUrl(language.language_code)" alt="Language flag" />
-                        {{ language.language_name }}
-                    </li>
-                </ul>
+
                 <div class="wrapper-input">
                     <input type="text" v-model="guess" @keydown.enter="checkGuess" placeholder="Guess the word" />
                 </div>
@@ -54,18 +58,20 @@
                 <div class="targetLanguage" @click="toggleTargetLanguageList">
                     <div class="espace-drapeau">
 
-                        <img v-if="targetLanguage.language_code" :src="getFlagImageUrl(targetLanguage.language_code)"
-                            alt="Language flag" />
+                        <div :class="'fi fi-' + targetLanguage.language_code"></div>
                     </div>
                     <div class="espace-nom">
                         {{ targetLanguage.language_name }}
                     </div>
-                    <ul style="top : 0;" v-if="showTargetLanguageList" @click.stop>
-                        <li v-for="language in languages" :key="language.language_code"
-                            @click="selectTargetLanguage(language)">
-                            <img :src="getFlagImageUrl(language.language_code)" alt="Language flag" />
-                            {{ language.language_name }}
+                    <ul style="top : -50px; left :-95px; border : 0px" v-if="showTargetLanguageList" class="language-list"
+                        @click.stop>
+                        <li v-for="(language, index) in languages" :key="index" @click="selectTargetLanguage(language)">
+                            <div :class="'fi fi-' + language.language_code"></div>
+                            <div class="language-name">{{ language.language_name }}
+                            </div>
+                            <div class="petite-ligne"></div>
                         </li>
+
                     </ul>
                 </div>
                 <div class="bouton-container">
@@ -104,7 +110,7 @@ export default {
             choices: [],
         };
     },
-    mounted() {
+    async mounted() {
 
         //trouve les languages grâce à fetch languages puis mets le premier language de la liste en sourceLanguage
         this.fetchLanguages().then(() => {
@@ -129,6 +135,20 @@ export default {
         selectSourceLanguage(language) {
             this.sourceLanguage = language;
             this.showSourceLanguageList = false;
+            if (this.user) {
+                this.updateUserLanguage(this.user.id, language.id);
+            }
+
+        },
+        // Fais moi une fonction qui effectue une requête pour dire que l'utilisateur a changé de langue, la route est /api/user/:id/language
+        async updateUserLanguages(userId, languageId) {
+            try {
+                const response = await axios.put(`/api/users/${userId}/languages`, { languageId });
+                return response.data;
+            } catch (error) {
+                console.error(error);
+                throw new Error('Error updating user languages');
+            }
         },
         selectTargetLanguage(language) {
             this.targetLanguage = language;
@@ -253,6 +273,27 @@ export default {
 
 
 <style scoped>
+.petite-ligne {
+    height: 1px;
+    width: 10%;
+    margin-left: 52%;
+    background-color: #d9d9d9;
+}
+
+.mini-ligne {
+    height: 1px;
+    width: 10%;
+    margin-left: 52%;
+    background-color: #d9d9d9;
+}
+
+.espace-drapeau .fi {
+    height: 50%;
+    width: 50%;
+    border-radius: 12px;
+}
+
+
 .wrapper-input {
     display: flex;
     justify-content: center;
@@ -286,6 +327,7 @@ export default {
 
 .wrapper-guess ul {
     position: absolute;
+    width: 250px;
     margin: 0;
     padding: 0;
     background-color: white;
@@ -293,14 +335,9 @@ export default {
     list-style: none;
 }
 
-.wrapper-guess li {
-    display: flex;
-    align-items: center;
-    padding: 5px;
-    cursor: pointer;
-}
 
-.wrapper-guess li img {
+
+.wrapper-guess li .fi {
     width: 20px;
     margin-right: 5px;
 }
@@ -337,7 +374,7 @@ export default {
     font-weight: 600;
 }
 
-.espace-drapeau img {
+.espace-drapeau .fi {
     min-width: 60px;
 }
 
@@ -420,7 +457,7 @@ input::placeholder {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.17);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.10);
     height: 55%;
 }
 
@@ -457,16 +494,23 @@ input::placeholder {
     cursor: pointer;
 }
 
-.language-selector .language-flag {
+.language-flag {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 32px;
-    height: 32px;
+
+    height: 100%;
     margin-right: 10px;
 }
 
-.language-selector .language-name {
+.language-flag .fi {
+    width: 100%;
+    height: 60%;
+    border-radius: 12px;
+}
+
+.language-name {
     font-size: 22px;
     font-family: "DINPro-Light";
     text-transform: capitalize;
@@ -479,10 +523,8 @@ input::placeholder {
     top: 0;
 }
 
-.language-selector .language-list {
+.language-list {
     position: absolute;
-    top: 60px;
-    left: 0;
     width: 100%;
     padding: 0;
     margin: 0;
@@ -492,7 +534,7 @@ input::placeholder {
     border-radius: 30px;
 }
 
-.language-selector .language-list li {
+.language-list li {
     list-style: none;
     text-align: center;
     padding: 5px;
@@ -502,15 +544,16 @@ input::placeholder {
 }
 
 
-.language-selector .language-list li:hover {
+.language-list li:hover {
     background-color: #f2f2f2;
 }
 
-.language-selector .language-list li img {
+.language-list li .fi {
     float: left;
     width: 32px;
     height: 32px;
     transform: translateX(120%);
+    border-radius: 9px;
 }
 
 .word-input-box {

@@ -11,13 +11,13 @@ const secret = process.env.JWT_SECRET; // Assurez-vous de définir cette variabl
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: 'info',
-  format: winston.format.json(),
-  defaultMeta: { service: 'user-service' },
-  transports: [
-    new winston.transports.File({ filename: 'error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'combined.log' })
-  ]
+    level: 'info',
+    format: winston.format.json(),
+    defaultMeta: { service: 'user-service' },
+    transports: [
+        new winston.transports.File({ filename: 'error.log', level: 'error' }),
+        new winston.transports.File({ filename: 'combined.log' })
+    ]
 });
 
 router.get('/api/word-to-guess', (req, res) => {
@@ -68,7 +68,7 @@ router.get('/api/word-to-guess', (req, res) => {
                 }, {});
 
                 res.json({
-                    word: {"word" : randomWord.word , "id" : randomWord.id},
+                    word: { "word": randomWord.word, "id": randomWord.id },
                     translations: translations,
                 });
             } else {
@@ -139,8 +139,8 @@ router.post('/api/register', async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, saltRounds);
 
         const query = `
-            INSERT INTO users (username, user_email, password)
-            VALUES (?, ?, ?);
+            INSERT INTO users (username, user_email, password,user_latest_language, user_latest_language_two)
+            VALUES (?, ?, ?, 1 , 2);
         `;
 
         const [result] = await db.promise().query(query, [username, email, hashedPassword]);
@@ -168,7 +168,7 @@ router.post('/api/login', async (req, res) => {
 
     // TODO: Valider les identifiants et générer un JWT
     const userQuery = 'SELECT * FROM users WHERE username = ? OR user_email = ?;';
-    db.query(userQuery, [username,username], async (err, results) => {
+    db.query(userQuery, [username, username], async (err, results) => {
         if (err) {
             console.error('Error fetching user:', err);
             res.status(500).json({ error: 'Error fetching user' });
@@ -225,6 +225,8 @@ router.get('/api/languages', (req, res) => {
     });
 });
 
+
+
 router.get('/api/words', (req, res) => {
     const query = 'SELECT id, language_id, word FROM words';
 
@@ -239,28 +241,107 @@ router.get('/api/words', (req, res) => {
     });
 });
 
+router.get('/api/user-progress', async (req, res) => {
+    const { userId } = req.query;
+
+    if (!userId) {
+        return res.status(400).json({ error: 'Le paramètre userId est requis.' });
+    }
+
+    const getUserQuery = `
+    SELECT * FROM users
+    WHERE id = ?
+  `;
+
+    const getUserProgressQuery = `
+    SELECT * FROM user_progress
+    WHERE user_id = ?
+  `;
+
+    const getLanguagesQuery = `
+    SELECT id FROM languages
+  `;
+
+    let user, userProgressRows, languageRows;
+
+    try {
+        const [userRows] = await db.promise().query(getUserQuery, [userId]);
+
+        if (userRows.length === 0) {
+            return res.status(404).json({ error: `L'utilisateur avec l'ID ${userId} n'existe pas.` });
+        }
+
+        user = userRows[0];
+        const [userProgressRows] = await db.promise().query(getUserProgressQuery, [userId]);
+        this.userProgressRows = userProgressRows;
+        const [languageRows] = await db.promise().query(getLanguagesQuery);
+        this.languageRows = languageRows;
+
+        const userProgressLanguageIds = this.userProgressRows.map((row) => row.language_id);
+        const languageIds = this.languageRows.map((row) => row.id);
+
+        const missingLanguageIds = languageIds.filter((id) => !userProgressLanguageIds.includes(id));
+        const existingUserProgressRows = this.userProgressRows.filter((row) => languageIds.includes(row.language_id));
+
+        if (missingLanguageIds.length > 0) {
+            const insertUserProgressQueries = missingLanguageIds.map((languageId) => {
+                const insertUserProgressQuery = `
+          INSERT INTO user_progress (user_id, language_id, score)
+          VALUES (?, ?, 0)
+        `;
+                return db.promise().query(insertUserProgressQuery, [userId, languageId]);
+            });
+
+            await Promise.all(insertUserProgressQueries);
+            const [newUserProgressRows] = await db.promise().query(getUserProgressQuery, [userId]);
+            this.userProgressRows = newUserProgressRows;
+            res.json(newUserProgressRows);
+        } else if (existingUserProgressRows.length < languageIds.length) {
+            const insertUserProgressQueries = missingLanguageIds.map((languageId) => {
+                const insertUserProgressQuery = `
+          INSERT INTO user_progress (user_id, language_id, score)
+          VALUES (?, ?, 0)
+        `;
+                return db.promise().query(insertUserProgressQuery, [userId, languageId]);
+            });
+            await Promise.all(insertUserProgressQueries);
+            const [newUserProgressRows] = await db.promise().query(getUserProgressQuery, [userId]);
+            this.userProgressRows = newUserProgressRows;
+            res.json(newUserProgressRows);
+        } else {
+            res.json(this.userProgressRows);
+        }
+    } catch (err) {
+        console.error('Erreur lors de la récupération de la progression de l\'utilisateur: ', err);
+        res.status(500).json({
+            error: 'Erreur lors de la récupération de la progression de l\'utilisateur.'
+        });
+    }
+});
+
+
 router.post('/api/add-word', async (req, res) => {
     const { word, languageId } = req.body;
-  
+
     if (!word || !languageId) {
-      res.status(400).json({ error: "Les champs 'word' et 'languageId' sont obligatoires." });
-      return;
-    }
-  
-    const query = 'INSERT INTO words (language_id, word) VALUES (?, ?)';
-  
-    db.query(query, [languageId, word], (err, result) => {
-      if (err) {
-        console.error('Error adding word:', err);
-        res.status(500).json({ success: false });
+        res.status(400).json({ error: "Les champs 'word' et 'languageId' sont obligatoires." });
         return;
-      }
-  
-      // Renvoyer l'ID du mot ajouté dans la réponse
-      res.json({ success: true, wordId: result.insertId });
+    }
+
+    const query = 'INSERT INTO words (language_id, word) VALUES (?, ?)';
+
+    db.query(query, [languageId, word], (err, result) => {
+        if (err) {
+            console.error('Error adding word:', err);
+            res.status(500).json({ success: false });
+            return;
+        }
+
+        // Renvoyer l'ID du mot ajouté dans la réponse
+        res.json({ success: true, wordId: result.insertId });
     });
-  });
-  
+});
+
 
 router.post('/api/add-translation', async (req, res) => {
     const { wordId, targetLanguageId, translation } = req.body;
@@ -306,44 +387,10 @@ router.get('/api/random-words', (req, res) => {
     });
 });
 
-router.get('/api/user/progress', async (req, res) => {
-    const languageId = req.query.sourceLanguageId;
-    const userId = req.query.userId;
-
-    if (!languageId || !userId) {
-        res.status(400).json({ error: 'Les champs "sourceLanguageId" et "userId" sont obligatoires.' });
-        return;
-    }
-
-    const findProgressQuery = `
-    SELECT progress
-    FROM user_progress
-    WHERE user_id = ? AND language_id = ?
-  `;
-
-    const createProgressQuery = `
-    INSERT INTO user_progress (user_id, language_id, progress)
-    VALUES (?, ?, ?)
-  `;
-
-    try {
-        const [progressResult] = await db.promise().query(findProgressQuery, [userId, languageId]);
-        if (progressResult.length > 0) {
-            res.json({ progress: progressResult[0].progress });
-        } else {
-            const initialProgress = 0;
-            await db.promise().query(createProgressQuery, [userId, languageId, initialProgress]);
-            res.json({ progress: initialProgress });
-        }
-    } catch (err) {
-        console.error('Error fetching or creating user progress:', err);
-        res.status(500).json({ error: 'Error fetching or creating user progress' });
-    }
-});
 
 function authenticateToken(req, res, next) {
     const authHeader = req.headers['authorization'];
-    
+
     const token = authHeader && authHeader.split(' ')[1];
     logger.info('Authorization header: ' + token);
 
@@ -351,7 +398,7 @@ function authenticateToken(req, res, next) {
     if (token == null) {
         logger.info('Pas de token');
         return res.status(401).json({ error: 'Unauthorized' });
-        
+
     }
 
     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
@@ -396,28 +443,28 @@ router.get('/api/user', authenticateToken, async (req, res) => {
 
 router.get('/api/translations', async (req, res) => {
     const wordId = req.query.wordId;
-  
+
     if (!wordId) {
-      res.status(400).json({ error: "Le paramètre 'wordId' est obligatoire." });
-      return;
+        res.status(400).json({ error: "Le paramètre 'wordId' est obligatoire." });
+        return;
     }
-  
+
     const query = `
       SELECT * FROM translations WHERE word_id = ?
     `;
-  
-    db.query(query, [wordId], (err, results) => {
-      if (err) {
-        console.error('Error fetching translations:', err);
-        res.status(500).json({ error: 'Error fetching translations' });
-        return;
-      }
-  
-      res.json(results);
-    });
-  });
 
-  
+    db.query(query, [wordId], (err, results) => {
+        if (err) {
+            console.error('Error fetching translations:', err);
+            res.status(500).json({ error: 'Error fetching translations' });
+            return;
+        }
+
+        res.json(results);
+    });
+});
+
+
 module.exports = router;
 
 

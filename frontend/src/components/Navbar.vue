@@ -1,6 +1,6 @@
 <template>
     <nav class="navbarVoca">
-        
+
         <router-link class="logo" to="/">
             <img id="logo" src="../assets/images/final_voca.png">
         </router-link>
@@ -9,15 +9,130 @@
             <router-link class="inscription-button" to="/register">Inscription</router-link>
         </div>
         <div v-else class="nav-user">
-                <h1>{{ user.username }}</h1>
-                <a class="nav-link" href="#" @click.prevent="logout">Se déconnecter</a>
+            <div class="carousel-container" @wheel="onWheel">
+                <div class="carousel-item" v-for="(progress, index) in user_progress" :key="index"
+                    :style="{ backgroundColor: 'white', zIndex: getZIndex(index), left: getPositionX(index) }"
+                    :class="{ 'carousel-item--active': index === activeIndex, 'carousel-item--hidden': isHidden(index) }">
+                    <div class="partie-information">
+                        <div style="border-radius: 3px"
+                            :class="'fi fi-' + getPaysFromId(progress.language_id).language_code"></div> {{
+                                getPaysFromId(progress.language_id).language_name }}
+                    </div>
+                    <div class="partie-barre">
+                        <div id="progress"
+                            :style="{ position: 'absolute',width: progress.score + '%', height: '15px', backgroundColor: getProgressColor(progress.score), borderRadius: '15px' }"
+                            class="progress-inner"></div>
+                        <div
+                                :style="{ width:  '100%', height: '15px', backgroundColor: '#e3e3e3', borderRadius: '15px' }"
+                                class="progress-inner"></div>
+                    </div>
+
+                </div>
+
+
             </div>
+            <div class="espace-nom">{{ user.username }}</div>
+            <div class="espace-icone" @click="logout">
+                <img src="../assets/images/log-out_color.png">
+            </div>
+        </div>
     </nav>
     <div class="ligne"></div>
-
 </template>
-<style scoped>
 
+<style scoped>
+.partie-information {
+    width: 100%;
+    height: 60%;
+    font-family: "DinRoundPro-Light";
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    text-transform: capitalize;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+
+.progress-inner {
+    height: 100%;
+    background-color: #ddd;
+}
+
+.partie-barre {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+        padding: 0 5%;
+}
+
+.carousel-container {
+    overflow: hidden;
+    z-index: 1000;
+    /* Ajouter cette ligne */
+    justify-content: center;
+    /* Ajouter cette ligne */
+    align-items: center;
+    /* Ajouter cette ligne */
+    display: flex;
+    width: 65%;
+    height: 100px;
+}
+
+.carousel-item {
+    position: absolute;
+    left: 50%;
+    transform: translateX(0%);
+    display: block;
+    width: 140px;
+    height: 70px;
+    transition: all 0.3s ease;
+    margin: 0;
+}
+
+.carousel-item--active {
+    left: calc(50% + 140px);
+    /* 140px est la largeur des rectangles */
+    transform: translateX(0%) scale(1.5);
+}
+
+.carousel-item--hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+.espace-nom {
+    width: 30%;
+    font-family: "Whyte Medium";
+    font-size: 40px;
+    color: var(--dark-gris);
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2%;
+    align-items: center;
+}
+
+.espace-icone {
+    width: 5%;
+    background-color: rgb(194, 194, 194);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.espace-icone img {
+    max-width: 80%;
+}
+
+.carousel-container,
+.espace-nom,
+.espace-icone {
+    height: 100%;
+}
 
 .ligne {
     border-bottom: 1px solid #BEBEBE;
@@ -25,6 +140,7 @@
     width: 80%;
     margin: 0 auto;
 }
+
 .connexion-button {
     background-color: rgba(255, 255, 255, 0);
     font-weight: normal;
@@ -71,6 +187,13 @@
     /* espacement intérieur de votre navbar */
 }
 
+.nav-user {
+    width: 60%;
+    height: 80%;
+    display: flex;
+
+}
+
 .nav-buttons {
     display: flex;
     justify-content: flex-end;
@@ -98,6 +221,7 @@ nav .nav-buttons a {
     /* permet de maintenir le ratio de l'image */
 }
 </style>
+
 <script>
 import axios from 'axios';
 export default {
@@ -107,13 +231,23 @@ export default {
             user: null,
             username: '',
             password: '',
+            languages: [],
+            user_progress: [],
+            activeIndex: 0,
         };
     },
     async mounted() {
 
-        await this.checkIfConnected();
 
-        
+        // check s'il est connecté et s'il est connecté récupère sa progress grâce à getUserProgress() et checkIfConnected()
+        this.fetchLanguages();
+        this.checkIfConnected().then(() => {
+            if (this.user) {
+                this.getUserProgress(this.user.id);
+            }
+        });
+
+
     },
 
     watch: {
@@ -122,13 +256,62 @@ export default {
         }
     },
     methods: {
+        getPaysFromId(id) {
+            return this.languages.find((language) => language.id === id);
+        },
+        getProgressColor(progress) {
+            const hue = progress / 100 * 120;
+            const saturation = 100;
+            const lightness = 50;
+            const color = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+            return color;
+        },
+        async fetchLanguages() {
+            try {
+                const response = await axios.get('http://localhost:3001/api/languages');
+                this.languages = response.data;
+            } catch (error) {
+                console.error('Error fetching languages:', error);
+            }
+        },
+
+        onWheel(event) {
+            if (event.deltaY < 0) {
+                this.activeIndex = (this.activeIndex - 1 + this.languages.length) % this.languages.length;
+            } else {
+                this.activeIndex = (this.activeIndex + 1) % this.languages.length;
+            }
+        },
+        getZIndex(index) {
+            const zIndex = Math.abs(this.languages.length - Math.abs(this.activeIndex - index));
+            if (zIndex <= 1 || zIndex >= this.languages.length - 1) {
+                return zIndex;
+            }
+            return -1;
+        },
+        getPositionX(index) {
+            const diff = index - this.activeIndex;
+            if (diff === -1 || diff === this.languages.length - 1) {
+                return "49%";
+            }
+            if (diff === 1 || diff === -(this.languages.length - 1)) {
+                return "71%";
+            }
+            return "60%";
+        }
+        ,
+        isHidden(index) {
+            const zIndex = Math.abs(this.languages.length - Math.abs(this.activeIndex - index));
+            return zIndex > 2 && zIndex < this.languages.length - 2;
+        },
+
 
         logout() {
             // Remove the token cookie and user data
             localStorage.clear();
             this.user = null;
         },
-        
+
         async checkIfConnected() {
             const token = localStorage.getItem('authToken');
             console.log('je cherche le token dans le local storage');
@@ -148,9 +331,21 @@ export default {
                     localStorage.clear();
                 }
             }
-        }
+        },
+        async getUserProgress(user_id) {
+            const response = await axios.get('http://localhost:3001/api/user-progress?userId=' + user_id);
+            this.user_progress = response.data;
+        },
+
     },
-    
-    
+    async getUserInfo(identifiant) {
+        const response = await axios.get('http://localhost:3001/api/user/', {
+            headers: { Authorization: `Bearer ${identifiant}` },
+        });
+        const userA = response.data;
+        console.log('user', userA);
+
+    }
+
 };
 </script>
