@@ -11,7 +11,7 @@
         <div v-else class="nav-user">
             <div class="carousel-container" @wheel="onWheel">
                 <div class="carousel-item" v-for="(progress, index) in user_progress" :key="index"
-                    :style="{ backgroundColor: 'white', zIndex: getZIndex(index), left: getPositionX(index) }"
+                    :style="{ zIndex: getZIndex(index), left: getPositionX(index) }"
                     :class="{ 'carousel-item--active': index === activeIndex, 'carousel-item--hidden': isHidden(index) }">
                     <div class="partie-information">
                         <div style="border-radius: 3px"
@@ -302,7 +302,10 @@ export default {
         ,
         isHidden(index) {
             const zIndex = Math.abs(this.languages.length - Math.abs(this.activeIndex - index));
-            return zIndex > 2 && zIndex < this.languages.length - 2;
+            if (zIndex <= 1 || zIndex >= this.languages.length - 1) {
+                return false;
+            }
+            return true;
         },
 
 
