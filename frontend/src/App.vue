@@ -3,6 +3,7 @@
     <Navbar />
     <router-view></router-view>
   </div>
+  <canvas id="particles" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
   <footer>
     <div class="ligne-footer"></div>
     <div class="footer-content">
@@ -25,6 +26,61 @@ export default {
   components: {
     Navbar,
   },
+  mounted() {
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particlesArray = [];
+
+    class Particle {
+      constructor(x, y, size, color) {
+        this.x = x;
+        this.y = y;
+        this.size = size;
+        this.color = color;
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+
+      update() {
+        this.y += 0.5;
+        if (this.y > canvas.height) {
+          this.y = 0;
+          this.x = Math.random() * canvas.width;
+        }
+        this.draw();
+      }
+    }
+
+    function initParticles() {
+      const numberOfParticles = 20;
+      for (let i = 0; i < numberOfParticles; i++) {
+        const x = Math.random() * canvas.width;
+        const y = Math.random() * canvas.height;
+        const size = Math.random() * 5 + 1;
+        const color = `rgba(${Math.random() * 30},${Math.random() * 30},${Math.random() * 30},0.2)`;
+        particlesArray.push(new Particle(x, y, size, color));
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+      }
+      requestAnimationFrame(animateParticles);
+    }
+
+    initParticles();
+    animateParticles();
+  },
 };
 </script>
 
@@ -32,6 +88,7 @@ export default {
 :root {
     --light-beige: #fef8f0;
     --main-violet: #9384D1;
+    --main-violet-dark : #7A6AB3;
     --primary-violet: #C9A7EB;
     --secondary-violet: #ECC9EE;
     --main-beige: #FFDCB6;

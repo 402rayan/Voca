@@ -2,7 +2,9 @@
     <div class="fil-arianne">
         <RouterLink to="/">home</RouterLink> > vocabulary
     </div>
+    
     <div class="wrapper">
+        
         <div class="wrapper-word">
             <div class="espace-langage">
                 <div class="language-selector" @click="toggleSourceLanguageList">
@@ -13,20 +15,22 @@
 
                     <div class="language-name">{{ sourceLanguage.language_name }}</div>
 
-                    <ul style="top : 60px; left: 0" v-if="showSourceLanguageList" class="language-list" @click.stop>
-                        <li v-for="(language, index) in languages" :key="index" @click="selectSourceLanguage(language)">
-                            <div :class="'fi fi-' + language.language_code"></div>
-                            <div class="language-name">{{ language.language_name }}
-                            </div>
-                            <div class="petite-ligne"></div>
-                        </li>
+                        <ul v-if="showSourceLanguageList" class="language-list" @click.stop>
 
-                    </ul>
+                            <li v-for="(language, index) in languages" :key="index" @click="selectSourceLanguage(language)">
+                                <div :class="'fi fi-' + language.language_code"></div>
+                                <div class="language-name">{{ language.language_name }}
+                                </div>
+                                <div class="petite-ligne"></div>
+                            </li>
+
+                        </ul>
                 </div>
             </div>
 
-            <div id="word">{{ translations[this.sourceLanguage.id] }}</div>
+            <div id="word"></div>
         </div>
+        
         <div class="wrapper-guess">
             <div v-if="mode === 'text'" class="wrapper-guess-one">
                 <div class="targetLanguage" @click="toggleTargetLanguageList">
@@ -50,7 +54,7 @@
                 </div>
 
                 <div class="wrapper-input">
-                    <input type="text" v-model="guess" @keydown.enter="checkGuess" placeholder="Guess the word" />
+                    <input id="inputGuess" type="text" v-model="guess" @keydown.enter="checkGuess" placeholder="Guess the word" />
                 </div>
                 <div class="send-button">&rarr;</div>
             </div>
@@ -75,8 +79,9 @@
                     </ul>
                 </div>
                 <div class="bouton-container">
-                    <button v-for="(choice, index) in choices" :key="index" @click="checkChoice(choice)"
-                        class="bouton-proposition">
+                    <button v-for="(choice, index) in choices" :key="index" @click="checkChoice(choice, index)"
+                        class="bouton-proposition"
+                        :class="{ 'animate__animated animate__pulse animate__shakeX animate__flash incorrect': index === incorrectButtonIndex, 'animate__animated animate__bounce correct': index === correctButtonIndex }">
                         {{ choice }}
                     </button>
                 </div>
@@ -92,6 +97,9 @@
 
 <script>
 import axios from 'axios';
+import Typed from 'typed.js';
+
+
 export default {
     name: 'VocabularyVue',
     data() {
@@ -106,8 +114,10 @@ export default {
             wordToGuess: '',
             translations: [],
             guess: '',
-            mode: 'text',
+            mode: 'choices',
             choices: [],
+            incorrectButtonIndex: -1,
+            correctButtonIndex: -1,
         };
     },
     async mounted() {
@@ -120,6 +130,20 @@ export default {
         });
     },
     methods: {
+        changeColor() {
+            // Ajouter la classe d'animation pour changer la couleur
+            const button = document.querySelector('.btn');
+            button.classList.add('animate__heartBeat');
+
+            // Changer la couleur de fond du bouton
+            button.style.backgroundColor = '#FF5733';
+
+            // Supprimer la classe d'animation après un délai pour réinitialiser le bouton
+            setTimeout(() => {
+                button.classList.remove('animate__heartBeat');
+                button.style.backgroundColor = '';
+            }, 1000);
+        },
         toggleSourceLanguageList() {
             this.showSourceLanguageList = !this.showSourceLanguageList;
         },
@@ -179,35 +203,60 @@ export default {
                 console.log("Vous navez rien marqué!");
                 return;
             }
-            axios
-                .post('http://localhost:3001/api/check-guess', {
+            try {
+                const response = await axios.post('http://localhost:3001/api/check-guess', {
                     wordId: this.wordToGuess.id,
                     targetLanguageId: this.targetLanguage.id,
                     guess: this.guess,
-                })
-                .then((response) => {
-                    const { correct } = response.data;
-                    if (correct) {
-                        console.log('Correct!');
-                    } else {
-                        console.log('Incorrect!');
-                    }
-                    this.fetchWordToGuess(this.sourceLanguage.id, this.targetLanguage.id);
-                })
-                .catch((error) => {
-                    console.error('Error checking guess:', error);
                 });
+                const { correct } = response.data;
+                const input_guess = document.getElementById("inputGuess");
+                if (correct) {
+                    console.log('Correct!');
+                    // fais console.log("yes") dans 1 minute
+                    
+                    input_guess.classList.add('animate__animated', 'animate__bounce', 'correct');
+                    setTimeout(() => {
+                        this.fetchWordToGuess(this.sourceLanguage.id, this.targetLanguage.id);
+                        input_guess.classList.remove('animate__animated', 'animate__bounce', 'correct');
+                    }, 1000 );
+                    
+                } else {
+                    console.log('Incorrect!');
+                    input_guess.classList.add('animate__animated', 'animate__pulse', 'animate__shakeX', 'animate__flash', 'incorrect');
+                    setTimeout(() => {
+                        input_guess.classList.remove('animate__animated', 'animate__pulse', 'animate__shakeX', 'animate__flash', 'incorrect');
+                    }, 1000 );
+                }
+                
+            } catch (error) {
+                console.error('Error checking guess:', error);
+            }
         },
 
-        checkChoice(choice) {
-            this.showSourceLanguageList = false; this.showTargetLanguageList = false;
+
+        checkChoice(choice, index) {
+            this.showSourceLanguageList = false;
+            this.showTargetLanguageList = false;
             const bonne_reponse = this.translations[this.targetLanguage.id];
             if (choice === bonne_reponse) {
-                console.log('Correct!')
+                console.log('Correct!');
+                this.incorrectButtonIndex = -1;
+                this.correctButtonIndex = index;
+                setTimeout(() => {
+                    this.correctButtonIndex = -1;
+                    this.fetchWordToGuess(this.sourceLanguage.id, this.targetLanguage.id);
+                }, 1000);
+                
             } else {
-                console.log('Incorrect!')
+                console.log('Incorrect!');
+                this.incorrectButtonIndex = index;
+                this.correctButtonIndex = -1;
+                setTimeout(() => {
+                    this.incorrectButtonIndex = -1;
+                }, 1000);
             }
-            this.fetchWordToGuess(this.sourceLanguage.id, this.targetLanguage.id);
+            
         },
 
         async fetchRandomWords(languageId, count) {
@@ -232,6 +281,23 @@ export default {
                     this.wordToGuess = word;
                     this.translations = translations;
                     this.guess = '';
+                    document.getElementById('word').innerHTML = '';
+
+                    // Supprimer l'instance précédente de Typed si elle existe
+                    if (this.typedInstance) {
+                        this.typedInstance.destroy();
+                    }
+
+                    // Créer une nouvelle instance Typed avec le nouveau mot
+                    setTimeout(() => {
+                        this.$nextTick(() => {
+                            this.typedInstance = new Typed('#word', {
+                                strings: [this.translations[this.sourceLanguage.id]],
+                                typeSpeed: 100,
+                                showCursor: false,
+                            });
+                        });
+                    }, 100);
                 })
                 .catch((error) => {
                     console.error('Error fetching word to guess:', error);
@@ -239,6 +305,8 @@ export default {
                     this.translations = [];
                 });
         },
+
+
         toggleMode() {
             this.mode = this.mode === 'text' ? 'choices' : 'text';
             this.showSourceLanguageList = false;
@@ -247,10 +315,12 @@ export default {
     },
     watch: {
         sourceLanguage() {
+            console.log('watch intervient');
             this.fetchWordToGuess(this.sourceLanguage.id, this.targetLanguage.id);
             //this.fetchUserProgress(); // Ajoutez cette ligne
         },
         targetLanguage() {
+            console.log('watch intervient');
             this.fetchWordToGuess(this.sourceLanguage.id, this.targetLanguage.id);
         },
         mode() {
@@ -273,6 +343,56 @@ export default {
 
 
 <style scoped>
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.correct {
+    background-color: rgba(20, 255, 59, 0.676) !important;
+    transition: background-color 0.3s ease;
+}
+
+.incorrect {
+    background-color: rgba(255, 36, 20, 0.769)!important;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+    transition: all 0.3s ease;
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to {
+    transform: translateY(-10px);
+    opacity: 0;
+}
+
+.bouton-proposition:hover,
+.ecriture-propositions:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+    transition: all 0.1s ease;
+}
+
+.bouton-proposition:active,
+.ecriture-propositions:active {
+    background-color: #e0e0e0;
+    transform: scale(1);
+}
+
 .petite-ligne {
     height: 1px;
     width: 10%;
@@ -318,6 +438,7 @@ export default {
     font-family: "DinRoundPro-Bold";
     color: var(--dar-gris);
     font-size: 32px;
+    transition: background-color 0.3s ease;
 
 }
 
@@ -524,6 +645,7 @@ input::placeholder {
 }
 
 .language-list {
+    z-index: 300;
     position: absolute;
     width: 100%;
     padding: 0;

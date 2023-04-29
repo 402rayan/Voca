@@ -9,22 +9,22 @@
             <router-link class="inscription-button" to="/register">Inscription</router-link>
         </div>
         <div v-else class="nav-user">
-            <div class="carousel-container" @wheel="onWheel">
+            <div class="carousel-container" @wheel="onWheel" @click="onWheel" @contextmenu.prevent="onWheel">
                 <div class="carousel-item" v-for="(progress, index) in user_progress" :key="index"
                     :style="{ zIndex: getZIndex(index), left: getPositionX(index) }"
                     :class="{ 'carousel-item--active': index === activeIndex, 'carousel-item--hidden': isHidden(index) }">
-                    <div class="partie-information">
-                        <div style="border-radius: 3px"
-                            :class="'fi fi-' + getPaysFromId(progress.language_id).language_code"></div> {{
-                                getPaysFromId(progress.language_id).language_name }}
+                    <div class="partie-information" style="display: flex; align-items: flex-end; padding-bottom : 5px">
+                        <div style="border-radius: 3px; margin-right: 3px;    transform: translateY(-3px);"
+                            :class="'fi fi-' + getPaysFromId(progress.language_id).language_code"></div>
+                        <span style="text-align: center;">{{ getPaysFromId(progress.language_id).language_name }}</span>
                     </div>
+
                     <div class="partie-barre">
                         <div id="progress"
-                            :style="{ position: 'absolute',width: progress.score + '%', height: '15px', backgroundColor: getProgressColor(progress.score), borderRadius: '15px' }"
+                            :style="{ position: 'absolute', width: progress.score + '%', height: '11px', backgroundColor: getProgressColor(progress.score), borderRadius: '15px' }"
                             class="progress-inner"></div>
-                        <div
-                                :style="{ width:  '100%', height: '15px', backgroundColor: '#e3e3e3', borderRadius: '15px' }"
-                                class="progress-inner"></div>
+                        <div :style="{ width: '100%', height: '11px', backgroundColor: 'rgb(233 233 233)', borderRadius: '15px' }"
+                            class="progress-inner"></div>
                     </div>
 
                 </div>
@@ -33,7 +33,7 @@
             </div>
             <div class="espace-nom">{{ user.username }}</div>
             <div class="espace-icone" @click="logout">
-                <img src="../assets/images/log-out_color.png">
+                <img src="../assets/images/exit.png">
             </div>
         </div>
     </nav>
@@ -41,16 +41,45 @@
 </template>
 
 <style scoped>
+
+@keyframes floatLogo {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-3px); }
+    100% { transform: translateY(0px); }
+}
+
+#logo {
+    animation: floatLogo 3s ease-in-out infinite;
+} 
+
+.connexion-button:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+.inscription-button:hover {
+    background-color: var(--main-violet-dark);
+}
+
+.espace-nom:hover {
+    color: var(--main-violet);
+}
+
+.espace-icone img:hover {
+    transform: rotate(90deg);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
 .partie-information {
+    color : var(--dark-gris);
     width: 100%;
     height: 60%;
     font-family: "DinRoundPro-Light";
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
     display: flex;
     text-transform: capitalize;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 
 
 }
@@ -66,7 +95,7 @@
     height: 40%;
     display: flex;
     align-items: center;
-        padding: 0 5%;
+    padding: 0 5%;
 }
 
 .carousel-container {
@@ -89,7 +118,7 @@
     display: block;
     width: 140px;
     height: 70px;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, opacity 0.3s ease;
     margin: 0;
 }
 
@@ -114,19 +143,20 @@
     justify-content: flex-end;
     padding-right: 2%;
     align-items: center;
+    transition : color 200ms ease;
 }
 
 .espace-icone {
     width: 5%;
-    background-color: rgb(194, 194, 194);
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
 .espace-icone img {
-    max-width: 80%;
+    max-width: 50%;
 }
+
 
 .carousel-container,
 .espace-nom,
