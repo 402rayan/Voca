@@ -6,6 +6,7 @@ import "/node_modules/flag-icons/css/flag-icons.min.css";
 import 'animate.css';
 import 'animate.css/animate.min.css';
 
+const app = createApp(App);
 
-
-createApp(App).use(router).mount('#app');
+app.use(router);
+app.mount('#app');

@@ -79,7 +79,9 @@ router.get('/api/word-to-guess', (req, res) => {
 });
 
 router.post('/api/check-guess', (req, res) => {
-    const { wordId, targetLanguageId, guess } = req.body;
+    const { wordId, targetLanguageId, guess, userId, secondeLangue } = req.body;
+    logger.info('le user est : ' + userId + ' et la seconde langue est : ' + secondeLangue);
+    // affiche dans les logs le user et la seconde langue
 
     if (!wordId || !targetLanguageId || !guess) {
         res.status(400).send('Les paramètres wordId, targetLanguageId et guess sont requis.');
@@ -89,7 +91,7 @@ router.post('/api/check-guess', (req, res) => {
     const getCorrectTranslationQuery = `
     SELECT * FROM translations
     WHERE word_id = ? AND language_id = ?;
-  `;
+    `;
 
     db.query(getCorrectTranslationQuery, [wordId, targetLanguageId], (err, correctTranslationRows) => {
         if (err) {
@@ -105,7 +107,72 @@ router.post('/api/check-guess', (req, res) => {
 
         const correctTranslation = correctTranslationRows[0].translation;
         const isCorrect = guess.trim().toLowerCase() === correctTranslation.trim().toLowerCase();
-        res.json({ correct: isCorrect });
+
+        if (userId) {
+            logger.info('le user est bien géré');
+            const getUserProgressQuery = `
+            SELECT * FROM user_progress
+            WHERE user_id = ? AND language_id = ?;
+            `;
+
+            db.query(getUserProgressQuery, [userId, targetLanguageId], (err, userProgressRows) => {
+                if (err) {
+                    console.error('Erreur lors de la récupération du score de l\'utilisateur:', err);
+                    res.status(500).send('Erreur lors de la récupération du score de l\'utilisateur.');
+                    return;
+                }
+
+                let score = userProgressRows.length === 0 ? 0 : userProgressRows[0].score;
+                score += isCorrect ? 0.125 : 0;
+
+
+                const updateUserProgressQuery = `
+                UPDATE user_progress SET score = ? WHERE user_id = ? AND language_id = ?;
+                `;
+                db.query(updateUserProgressQuery, [score, userId, targetLanguageId], (err) => {
+                    if (err) {
+                        console.error('Erreur lors de la mise à jour du score de l\'utilisateur:', err);
+                        res.status(500).send('Erreur lors de la mise à jour du score de l\'utilisateur.');
+                        return;
+                    }
+
+                    if (secondeLangue) {
+                        const getUserProgressQuery = `
+        SELECT * FROM user_progress
+        WHERE user_id = ? AND language_id = ?;
+    `;
+
+                        db.query(getUserProgressQuery, [userId, secondeLangue], (err, userProgressRows) => {
+                            if (err) {
+                                console.error('Erreur lors de la récupération du score de l\'utilisateur:', err);
+                                res.status(500).send('Erreur lors de la récupération du score de l\'utilisateur.');
+                                return;
+                            }
+
+                            let scoreSecondeLangue = userProgressRows.length === 0 ? 0 : userProgressRows[0].score;
+                            scoreSecondeLangue += isCorrect ? 0.125 : 0;
+
+                            const updateUserProgressQuerySecondeLangue = `
+            UPDATE user_progress SET score = ? WHERE user_id = ? AND language_id = ?;
+        `;
+                            db.query(updateUserProgressQuerySecondeLangue, [scoreSecondeLangue, userId, secondeLangue], (err) => {
+                                if (err) {
+                                    console.error('Erreur lors de la mise à jour du score de l\'utilisateur pour la seconde langue:', err);
+                                    res.status(500).send('Erreur lors de la mise à jour du score de l\'utilisateur pour la seconde langue.');
+                                    return;
+                                }
+
+                                res.json({ correct: isCorrect });
+                            });
+                        });
+                    } else {
+                        res.json({ correct: isCorrect });
+                    }
+                });
+            });
+        } else {
+            res.json({ correct: isCorrect });
+        }
     });
 });
 

@@ -203,32 +203,28 @@ export default {
                 console.log("Vous navez rien marqué!");
                 return;
             }
+
+        
             try {
                 const response = await axios.post('http://localhost:3001/api/check-guess', {
                     wordId: this.wordToGuess.id,
                     targetLanguageId: this.targetLanguage.id,
                     guess: this.guess,
+                    userId: localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')).id : null,
+                    secondeLangue: this.sourceLanguage.id,
                 });
                 const { correct } = response.data;
                 const input_guess = document.getElementById("inputGuess");
                 if (correct) {
                     console.log('Correct!');
-                    // fais console.log("yes") dans 1 minute
-                    
                     input_guess.classList.add('animate__animated', 'animate__bounce', 'correct');
                     setTimeout(() => {
                         this.fetchWordToGuess(this.sourceLanguage.id, this.targetLanguage.id);
-                        input_guess.classList.remove('animate__animated', 'animate__bounce', 'correct');
-                    }, 1000 );
-                    
+                        input_guess.classList.remove('animate__animated', 'animate__bounce', 'correct');}, 1000);
                 } else {
                     console.log('Incorrect!');
                     input_guess.classList.add('animate__animated', 'animate__pulse', 'animate__shakeX', 'animate__flash', 'incorrect');
-                    setTimeout(() => {
-                        input_guess.classList.remove('animate__animated', 'animate__pulse', 'animate__shakeX', 'animate__flash', 'incorrect');
-                    }, 1000 );
                 }
-                
             } catch (error) {
                 console.error('Error checking guess:', error);
             }
