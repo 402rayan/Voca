@@ -588,7 +588,7 @@ router.post('/api/add-translation_cha', async (req, res) => {
         return;
     }
 
-    const query = 'INSERT INTO translations_cha (word_id, alphabet_id, translation_cha, difficulty_level) VALUES (?, ?, ?, ?)';
+    const query = 'INSERT INTO translations_cha (character_id, alphabet_id, translation_cha, difficulty_level) VALUES (?, ?, ?, 0)';
 
     db.query(query, [characterId, targetAlphabetId, translation_cha, 0], (err) => {
         if (err) {

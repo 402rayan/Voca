@@ -1,6 +1,6 @@
 <template>
     <div class="fil-arianne"><RouterLink to="/" >home</RouterLink> > login</div>
-    <form @submit.prevent="handleLogin" class="wrapper">
+    <form @submit.prevent="handleLogin" class="wrapper" style="animation : fadeIn 1s ease">
         <div class="login-form">
             <input v-model="username" type="text" placeholder="Nom d'utilisateur">
             <input v-model="password" type="password" placeholder="Mot de passe">

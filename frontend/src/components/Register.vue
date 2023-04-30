@@ -1,6 +1,6 @@
 <template>
     <div class="fil-arianne"><RouterLink to="/" >home</RouterLink> > register</div>
-    <form @submit.prevent="register" class="wrapper">
+    <form @submit.prevent="register" class="wrapper" style="animation : fadeIn 1s ease">
             <div class="register-form">
                 <input v-model="username" type="text" placeholder="Nom d'utilisateur">
                 <input v-model="email" type="email" placeholder="E-mail">

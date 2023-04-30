@@ -3,7 +3,7 @@
         <RouterLink to="/">home</RouterLink> > alphabets
     </div>
 
-    <div class="wrapper">
+    <div class="wrapper" style="animation : fadeIn 1s ease">
 
         <div class="wrapper-character">
             <div class="espace-langage">
@@ -416,7 +416,10 @@ export default {
 .slide-fade-leave-active {
     transition: all 0.3s ease;
 }
-
+@keyframes fadeIn {
+   0% {opacity: 0;}
+   100% {opacity: 1;}
+} 
 .slide-fade-enter,
 .slide-fade-leave-to {
     transform: translateY(-10px);

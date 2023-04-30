@@ -1,6 +1,6 @@
 <template>
     <div class="fil-arianne">home</div>
-    <div class="categories">
+    <div class="categories" style="animation : fadeIn 1s ease">
         <RouterLink to="/alphabets" class="category">
             <div id="image-un" class="category-image"></div>
             <h3>Alphabets</h3>
@@ -37,6 +37,11 @@ export default {
 </script>
 
 <style scoped>
+
+@keyframes fadeIn {
+   0% {opacity: 0;}
+   100% {opacity: 1;}
+} 
 .categories {
   display: flex;
   justify-content: center;

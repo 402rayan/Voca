@@ -3,7 +3,7 @@
         <RouterLink to="/">home</RouterLink> > vocabulary
     </div>
     
-    <div class="wrapper">
+    <div class="wrapper" style="animation : fadeIn 1s ease">
         
         <div class="wrapper-word">
             <div class="espace-langage">
