@@ -3,15 +3,15 @@
     <div class="categories">
         <RouterLink to="/alphabets" class="category">
             <div id="image-un" class="category-image"></div>
-            <h3>Alphabet</h3>
+            <h3>Alphabets</h3>
         </RouterLink>
         <RouterLink to="/vocabulary" class="category">
             <div id="image-deux" class="category-image"></div>
             <h3>Vocabulary</h3>
         </RouterLink>
-        <RouterLink to="/categories" class="category">
+        <RouterLink to="/sentences" class="category">
             <div id="image-trois" class="category-image"></div>
-            <h3>Categories</h3>
+            <h3>Sentences</h3>
         </RouterLink>
     </div>
 </template>
@@ -29,8 +29,8 @@ export default {
         learnVocabulary() {
             this.$router.push('/vocabulary');
         },
-        learnLudicWords() {
-            this.$router.push('/ludic-words');
+        learnSentences() {
+            this.$router.push('/sentences');
         },
     },
 };

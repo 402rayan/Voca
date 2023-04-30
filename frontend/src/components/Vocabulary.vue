@@ -15,7 +15,7 @@
 
                     <div class="language-name">{{ sourceLanguage.language_name }}</div>
 
-                        <ul v-if="showSourceLanguageList" class="language-list" @click.stop>
+                        <ul v-if="showSourceLanguageList" class="language-list animate__animated animate__fadeInDown " @click.stop>
 
                             <li v-for="(language, index) in languages" :key="index" @click="selectSourceLanguage(language)">
                                 <div :class="'fi fi-' + language.language_code"></div>
@@ -41,7 +41,7 @@
                     <div class="espace-nom">
                         {{ targetLanguage.language_name }}
                     </div>
-                    <ul style="top : -50px; left :-75px; border : 0px" v-if="showTargetLanguageList" class="language-list"
+                    <ul style="top : -50px; left :-75px; border : 0px" v-if="showTargetLanguageList" class="language-list  animate__animated animate__zoomIn"
                         @click.stop>
                         <li v-for="(language, index) in languages" :key="index" @click="selectTargetLanguage(language)">
                             <div :class="'fi fi-' + language.language_code"></div>
@@ -54,7 +54,7 @@
                 </div>
 
                 <div class="wrapper-input">
-                    <input id="inputGuess" type="text" v-model="guess" @keydown.enter="checkGuess" placeholder="Guess the word" />
+                    <input id="inputGuess" type="text" v-bind:disabled="!peut_ecrire" v-model="guess" @keydown.enter="checkGuess" placeholder="Guess the word" />
                 </div>
                 <div class="send-button">&rarr;</div>
             </div>
@@ -67,7 +67,7 @@
                     <div class="espace-nom">
                         {{ targetLanguage.language_name }}
                     </div>
-                    <ul style="top : -50px; left :-95px; border : 0px" v-if="showTargetLanguageList" class="language-list"
+                    <ul style="top : -50px; left :-95px; border : 0px" v-if="showTargetLanguageList" class="language-list animate__animated animate__zoomIn"
                         @click.stop>
                         <li v-for="(language, index) in languages" :key="index" @click="selectTargetLanguage(language)">
                             <div :class="'fi fi-' + language.language_code"></div>
@@ -79,7 +79,7 @@
                     </ul>
                 </div>
                 <div class="bouton-container">
-                    <button v-for="(choice, index) in choices" :key="index" @click="checkChoice(choice, index)"
+                    <button v-for="(choice, index) in choices" v-bind:disabled="!bouton_cliquable"  :key="index" @click="checkChoice(choice, index)"
                         class="bouton-proposition"
                         :class="{ 'animate__animated animate__pulse animate__shakeX animate__flash incorrect': index === incorrectButtonIndex, 'animate__animated animate__bounce correct': index === correctButtonIndex }">
                         {{ choice }}
@@ -104,6 +104,8 @@ export default {
     name: 'VocabularyVue',
     data() {
         return {
+            peut_ecrire : true,
+            bouton_cliquable : true,
             sourceLanguage: {
             },
             targetLanguage: {
@@ -163,6 +165,7 @@ export default {
                 this.updateUserLanguage(this.user.id, language.id);
             }
 
+
         },
         // Fais moi une fonction qui effectue une requête pour dire que l'utilisateur a changé de langue, la route est /api/user/:id/language
         async updateUserLanguages(userId, languageId) {
@@ -199,7 +202,7 @@ export default {
             this.choices = [this.translations[this.targetLanguage.id], ...extractedWords].sort(() => Math.random() - 0.5);
         },
         async checkGuess() {
-            if (this.guess.length < 1) {
+            if (this.guess.length < 1 || !this.peut_ecrire) {
                 console.log("Vous navez rien marqué!");
                 return;
             }
@@ -216,14 +219,17 @@ export default {
                 const { correct } = response.data;
                 const input_guess = document.getElementById("inputGuess");
                 if (correct) {
-                    console.log('Correct!');
+                    this.peut_ecrire = false;
                     input_guess.classList.add('animate__animated', 'animate__bounce', 'correct');
                     setTimeout(() => {
                         this.fetchWordToGuess(this.sourceLanguage.id, this.targetLanguage.id);
                         input_guess.classList.remove('animate__animated', 'animate__bounce', 'correct');}, 1000);
+                        this.peut_ecrire = true;
                 } else {
-                    console.log('Incorrect!');
                     input_guess.classList.add('animate__animated', 'animate__pulse', 'animate__shakeX', 'animate__flash', 'incorrect');
+                    setTimeout(() => {
+                        input_guess.classList.remove('animate__animated', 'animate__pulse', 'animate__shakeX', 'animate__flash', 'incorrect');
+                    }, 1000);
                 }
             } catch (error) {
                 console.error('Error checking guess:', error);
@@ -232,20 +238,28 @@ export default {
 
 
         checkChoice(choice, index) {
+            
             this.showSourceLanguageList = false;
             this.showTargetLanguageList = false;
             const bonne_reponse = this.translations[this.targetLanguage.id];
             if (choice === bonne_reponse) {
-                console.log('Correct!');
+                this.bouton_cliquable = false;
+                axios.post('http://localhost:3001/api/check-guess', {
+                    wordId: this.wordToGuess.id,
+                    targetLanguageId: this.targetLanguage.id,
+                    guess: this.translations[this.targetLanguage.id],
+                    userId: localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')).id : null,
+                    secondeLangue: this.sourceLanguage.id,
+                });
                 this.incorrectButtonIndex = -1;
                 this.correctButtonIndex = index;
                 setTimeout(() => {
                     this.correctButtonIndex = -1;
                     this.fetchWordToGuess(this.sourceLanguage.id, this.targetLanguage.id);
+                    this.bouton_cliquable = true;
                 }, 1000);
                 
             } else {
-                console.log('Incorrect!');
                 this.incorrectButtonIndex = index;
                 this.correctButtonIndex = -1;
                 setTimeout(() => {
@@ -311,12 +325,10 @@ export default {
     },
     watch: {
         sourceLanguage() {
-            console.log('watch intervient');
             this.fetchWordToGuess(this.sourceLanguage.id, this.targetLanguage.id);
             //this.fetchUserProgress(); // Ajoutez cette ligne
         },
         targetLanguage() {
-            console.log('watch intervient');
             this.fetchWordToGuess(this.sourceLanguage.id, this.targetLanguage.id);
         },
         mode() {
@@ -339,6 +351,46 @@ export default {
 
 
 <style scoped>
+
+.animate__fadeInDown {
+  --animate-duration: 400ms;
+  animation-name: fadeInDown;
+  transform-origin: top;
+  animation-timing-function: cubic-bezier(.22,1.18,.78,.99);
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.animate__zoomIn {
+  --animate-duration: 400ms;
+  animation-name: zoomIn;
+  animation-timing-function: cubic-bezier(.22,1.18,.78,.99);
+  animation-fill-mode: both;
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
 @keyframes appear {
     0% {
         opacity: 0;
@@ -645,6 +697,7 @@ input::placeholder {
     position: absolute;
     width: 100%;
     padding: 0;
+    top : 0;
     margin: 0;
     list-style-type: none;
     background-color: #ffffff;
@@ -661,9 +714,14 @@ input::placeholder {
     padding-right: 32px;
 }
 
+.language-list li div {
+    transition : all 0.1s ease-in-out;
+}
 
-.language-list li:hover {
-    background-color: #f2f2f2;
+
+.language-list li:hover div {
+
+    transform: scale(1.01);
 }
 
 .language-list li .fi {

@@ -114,17 +114,13 @@ export default {
     methods: {
         submitForm() {
             // Mettre en place votre logique de connexion ici
-            console.log('Connexion réussie')
         },
         async handleLogin() {
-            console.log('test');
             try {
-                console.log(this.username, this.password);
                 const response = await axios.post('/api/login', {
                     username: this.username,
                     password: this.password,
                 });
-                console.log('response : ', response);
 
                 // Set the user data and token as a local storage item
                 this.user = response.data.user;

@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from '../components/HomePage.vue';
 import Alphabets from '../components/Alphabets.vue';
 import Vocabulary from '../components/Vocabulary.vue';
-import LudicWords from '../components/LudicWords.vue';
+import Sentences from '../components/Sentences.vue';
 import Register from '../components/Register.vue';
 import AddWord from '../components/AddWord.vue';
 import Login from '../components/Login.vue';
@@ -40,9 +40,9 @@ const routes = [
     component: Vocabulary,
   },
   {
-    path: '/categories',
-    name: 'LudicWords',
-    component: LudicWords,
+    path: '/sentences',
+    name: 'Sentences',
+    component: Sentences,
   },
 ];
 

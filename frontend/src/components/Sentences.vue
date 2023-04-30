@@ -1,4 +1,4 @@
-<!-- LudicWords.vue -->
+<!-- Sentence.vue -->
 <template>
     <div>
         <h2>Apprendre des mots ludiques</h2>
@@ -8,6 +8,6 @@
 </template>
 <script>
 export default {
-    name: 'LudicWords',
+    name: 'SentencesVue',
 };
 </script>

@@ -2,7 +2,7 @@
     <nav class="navbarVoca">
 
         <router-link class="logo" to="/">
-            <img id="logo" src="../assets/images/final_voca.png">
+            <img id="logo" src="../assets/images/logo_3.png">
         </router-link>
         <div v-if="!user" class="nav-buttons">
             <router-link class="connexion-button" to="/login">Connexion</router-link>
@@ -21,8 +21,9 @@
 
                     <div class="partie-barre">
                         <div id="progress"
-                            :style="{ position: 'absolute', width: progress.score + '%', height: '11px', backgroundColor: getProgressColor(progress.score), borderRadius: '15px' }"
+                            :style="{ position: 'absolute', width: getProgressWidth(progress.score) + '%', height: '11px', backgroundColor: getProgressColor(progress.score), borderRadius: '15px' }"
                             class="progress-inner"></div>
+
                         <div :style="{ width: '100%', height: '11px', backgroundColor: 'rgb(233 233 233)', borderRadius: '15px' }"
                             class="progress-inner"></div>
                     </div>
@@ -41,16 +42,28 @@
 </template>
 
 <style scoped>
-
 @keyframes floatLogo {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-3px); }
-    100% { transform: translateY(0px); }
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 #logo {
     animation: floatLogo 3s ease-in-out infinite;
-} 
+}
+
+#progress 
+{
+    transition: width 1s ease;
+}
 
 .connexion-button:hover {
     background-color: rgb(240, 240, 240);
@@ -69,8 +82,9 @@
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
 }
+
 .partie-information {
-    color : var(--dark-gris);
+    color: var(--dark-gris);
     width: 100%;
     height: 60%;
     font-family: "DinRoundPro-Light";
@@ -143,7 +157,7 @@
     justify-content: flex-end;
     padding-right: 2%;
     align-items: center;
-    transition : color 200ms ease;
+    transition: color 200ms ease;
 }
 
 .espace-icone {
@@ -274,25 +288,42 @@ export default {
         this.checkIfConnected().then(() => {
             if (this.user) {
                 this.getUserProgress(this.user.id);
+                setInterval(async () => {
+                    await this.getUserProgress(this.user.id);
+                }, 10000);
             }
         });
+
 
 
     },
 
     watch: {
         user() {
-            console.log('User changed:', this.user);
         }
     },
     methods: {
+        getProgressWidth(progress) {
+            const maxScore = 100;
+            const adjustedProgress = Math.min(progress, maxScore);
+            const width = (Math.log10(adjustedProgress + 1) / Math.log10(maxScore + 1)) * 90;
+            if (width < 0) {
+                return 0;
+            }
+            else if (width > 89) {
+                return 89;
+            }
+            return width;
+        },
         getPaysFromId(id) {
             return this.languages.find((language) => language.id === id);
         },
         getProgressColor(progress) {
-            const hue = progress / 100 * 120;
-            const saturation = 100;
-            const lightness = 50;
+            const maxScore = 100;
+            const adjustedProgress = Math.min(progress, maxScore);
+            const hue = adjustedProgress / maxScore * 120;
+            const saturation = 90; // Diminuez la saturation pour obtenir des couleurs pastel
+            const lightness = 70; // Augmentez la luminosité pour obtenir des couleurs pastel
             const color = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
             return color;
         },
@@ -347,17 +378,15 @@ export default {
 
         async checkIfConnected() {
             const token = localStorage.getItem('authToken');
-            console.log('je cherche le token dans le local storage');
 
             if (token) {
                 try {
                     // Make a request to the server to retrieve the user information
-                    console.log('Jai trouvé un token,je fais une requete pour avoir les infos de l\'utilisateur');
                     const response = await axios.get('http://localhost:3001/api/user/', {
                         headers: { Authorization: `Bearer ${token}` },
                     });
                     this.user = response.data;
-                    console.log('user', this.user);
+
                 } catch (error) {
                     console.error('Error retrieving user information:', error);
                     // SUpprime tout le local storage
@@ -371,14 +400,6 @@ export default {
         },
 
     },
-    async getUserInfo(identifiant) {
-        const response = await axios.get('http://localhost:3001/api/user/', {
-            headers: { Authorization: `Bearer ${identifiant}` },
-        });
-        const userA = response.data;
-        console.log('user', userA);
-
-    }
 
 };
 </script>

@@ -43,6 +43,30 @@ export default {
                     const { message, token } = response.data;
                     alert(message);
                     localStorage.setItem('authToken', token);
+
+                    const response_deux = axios.post('/api/login', {
+                        username: this.username,
+                        password: this.password,
+                    }).then((response_deux) => {
+                        this.user = response_deux.data.user;
+                        localStorage.setItem('user', JSON.stringify(this.user));
+                        this.$router.push('/'); // Redirigez l'utilisateur vers la page souhaitée
+                        location.reload();
+                    })
+                        .catch((error) => {
+                            console.error('Erreur lors de l\'inscription:', error);
+                            // Vérifiez la propriété `error` dans la réponse d'erreur
+                            if (error.response.data){
+                                if (error.response.data.error) {
+                                    alert(`Erreur lors de l'inscription: ${error.response.data.error}`);
+                                } else {
+                                    alert(`Erreur lors de l'inscription: ${error.message}`);
+                                }
+                            }
+                            
+                        });
+                    this.user = response_deux.data.user;
+                    localStorage.setItem('user', JSON.stringify(this.user));
                     this.$router.push('/'); // Redirigez l'utilisateur vers la page souhaitée
                 })
                 .catch((error) => {

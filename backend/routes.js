@@ -531,6 +531,218 @@ router.get('/api/translations', async (req, res) => {
     });
 });
 
+// CHARACTERS
+
+
+router.get('/api/translations_cha', async (req, res) => {
+    const characterId = req.query.characterId;
+
+    if (!characterId) {
+        res.status(400).json({ error: "Le paramètre 'characterId' est obligatoire." });
+        return;
+    }
+
+    const query = `
+      SELECT * FROM translations_cha WHERE character_id = ?
+    `;
+
+    db.query(query, [characterId], (err, results) => {
+        if (err) {
+            console.error('Error fetching translations:', err);
+            res.status(500).json({ error: 'Error fetching translations' });
+            return;
+        }
+
+        res.json(results);
+    });
+});
+
+router.get('/api/random-characters', (req, res) => {
+    const alphabetId = req.query.alphabetId;
+    const count = parseInt(req.query.count, 10) || 3;
+
+    const query = `
+    SELECT translation_cha
+    FROM translations_cha
+    WHERE alphabet_id = ?
+    ORDER BY RAND()
+    LIMIT ?
+  `;
+
+    db.query(query, [alphabetId, count], (err, results) => {
+        if (err) {
+            console.error('Error fetching random characters:', err);
+            res.status(500).json({ error: 'Error fetching random characters' });
+            return;
+        }
+
+        res.json(results);
+    });
+});
+
+router.post('/api/add-translation_cha', async (req, res) => {
+    const { characterId, targetAlphabetId, translation_cha } = req.body;
+
+    if (!characterId || !targetAlphabetId || !translation_cha) {
+        res.status(400).json({ error: "Les champs 'characterId', 'targetAlphabetId' et 'translation_cha' sont obligatoires." });
+        return;
+    }
+
+    const query = 'INSERT INTO translations_cha (word_id, alphabet_id, translation_cha, difficulty_level) VALUES (?, ?, ?, ?)';
+
+    db.query(query, [characterId, targetAlphabetId, translation_cha, 0], (err) => {
+        if (err) {
+            logger.info('Error adding translation:', err);
+            res.status(500).json({ success: false });
+            return;
+        }
+
+        res.json({ success: true });
+    });
+});
+
+router.post('/api/add-character', async (req, res) => {
+    const { character, alphabetId } = req.body;
+
+    if (!character || !alphabetId) {
+        res.status(400).json({ error: "Les champs 'character' et 'alphabetId' sont obligatoires." });
+        return;
+    }
+
+    const query = 'INSERT INTO characters (alphabet_id, `character`) VALUES (?, ?)';
+
+    db.query(query, [alphabetId, character], (err, result) => {
+        if (err) {
+            logger.info('Error adding character:', err);
+            res.status(500).json({ success: false });
+            return;
+        }
+
+        // Renvoyer l'ID du mot ajouté dans la réponse
+        res.json({ success: true, characterId: result.insertId });
+    });
+});
+
+router.get('/api/characters', (req, res) => {
+    const query = 'SELECT id, alphabet_id, `character` FROM characters';
+
+    db.query(query, (err, results) => {
+        if (err) {
+            logger.info('Error fetching characters:', err);
+            res.status(500).json({ error: 'Error fetching characters' });
+            return;
+        }
+
+        res.json(results);
+    });
+});
+
+router.get('/api/alphabets', (req, res) => {
+    const query = 'SELECT id, alphabet_code, alphabet_name FROM alphabets';
+
+    db.query(query, (err, results) => {
+        if (err) {
+            console.error('Error fetching alphabets:', err);
+            res.status(500).json({ error: 'Error fetching alphabets' });
+            return;
+        }
+
+        res.json(results);
+    });
+});
+
+router.post('/api/check-guess_cha', (req, res) => {
+    const { characterId, targetAlphabetId, guess} = req.body;
+    // affiche dans les logs le user et la seconde langue
+
+    if (!characterId || !targetAlphabetId || !guess) {
+        res.status(400).send('Les paramètres characterId, targetAlphabetId et guess sont requis.');
+        return;
+    }
+
+    const getCorrectTranslationQuery = `
+    SELECT * FROM translations_cha
+    WHERE character_id = ? AND alphabet_id = ?;
+    `;
+
+    db.query(getCorrectTranslationQuery, [characterId, targetAlphabetId], (err, correctTranslationRows) => {
+        if (err) {
+            console.error('Erreur lors de la récupération de la traduction correcte:', err);
+            res.status(500).send('Erreur lors de la récupération de la traduction correcte.');
+            return;
+        }
+
+        if (correctTranslationRows.length === 0) {
+            res.status(404).send('Aucune traduction trouvée.');
+            return;
+        }
+
+        const correctTranslation = correctTranslationRows[0].translation_cha;
+        const isCorrect = guess.trim().toLowerCase() === correctTranslation.trim().toLowerCase();
+
+        res.json({ correct: isCorrect });
+    
+    });
+});
+
+router.get('/api/character-to-guess', (req, res) => {
+    const sourceAlphabetId = req.query.sourceAlphabetId;
+    const targetAlphabetId = req.query.targetAlphabetId;
+
+    if (!sourceAlphabetId || !targetAlphabetId) {
+        res.status(400).send('Les paramètres sourceAlphabetId et targetAlphabetId sont requis.');
+        return;
+    }
+
+    const getRandomCharacterQuery = `
+    SELECT * FROM characters
+    ORDER BY RAND()
+    LIMIT 1;
+  `;
+
+    db.query(getRandomCharacterQuery, [sourceAlphabetId], (err, randomCharacterRows) => {
+        if (err) {
+            console.error('Erreur lors de la récupération d\'un mot aléatoire:', err);
+            res.status(500).send('Erreur lors de la récupération d\'un mot aléatoire.');
+            return;
+        }
+
+        if (randomCharacterRows.length === 0) {
+            res.status(404).send('Aucun mot trouvé.');
+            return;
+        }
+
+        const randomCharacter = randomCharacterRows[0];
+
+        const getTranslationsQuery = `
+      SELECT * FROM translations_cha
+      WHERE character_id = ? AND (alphabet_id = ? OR alphabet_id = ?);
+    `;
+
+        db.query(getTranslationsQuery, [randomCharacter.id, sourceAlphabetId, targetAlphabetId], (err, translationRows) => {
+            if (err) {
+                console.error('Erreur lors de la récupération des traductions:', err);
+                res.status(500).send('Erreur lors de la récupération des traductions.');
+                return;
+            }
+
+            if (translationRows.length > 0) {
+                const translations = translationRows.reduce((acc, row) => {
+                    acc[row.alphabet_id] = row.translation_cha;
+                    return acc;
+                }, {});
+
+                res.json({
+                    character: { "character": randomCharacter.character, "id": randomCharacter.id },
+                    translations_cha: translations,
+                });
+            } else {
+                res.status(404).send('Aucune traduction trouvée.');
+            }
+        });
+    });
+});
+
 
 module.exports = router;
 

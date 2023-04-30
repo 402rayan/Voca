@@ -60,7 +60,7 @@ export default {
     }
 
     function initParticles() {
-      const numberOfParticles = 20;
+      const numberOfParticles = 40;
       for (let i = 0; i < numberOfParticles; i++) {
         const x = Math.random() * canvas.width;
         const y = Math.random() * canvas.height;
