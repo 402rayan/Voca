@@ -126,8 +126,18 @@ export default {
 
         //trouve les languages grâce à fetch languages puis mets le premier language de la liste en sourceLanguage
         this.fetchLanguages().then(() => {
-            this.sourceLanguage = this.languages[1];
-            this.targetLanguage = this.languages[0];
+            // source language est égal à "user_source_language" du user contenu dans le local storage s'il existe, sinon c'est le premier de la liste
+            const userSourceLanguage = localStorage.getItem('user');
+            if (userSourceLanguage) {
+                this.sourceLanguage = this.languages.find(language => language.id === JSON.parse(userSourceLanguage).user_source_language);
+                // fais de même pour le target
+                this.targetLanguage = this.languages.find(language => language.id === JSON.parse(userSourceLanguage).user_target_language);
+            } else {
+                this.sourceLanguage = this.languages[0];
+                this.targetLanguage = this.languages[0];
+            }
+            
+            
             this.fetchWordToGuess(this.languages[1].id, this.languages[0].id);
         });
     },
@@ -161,17 +171,32 @@ export default {
         selectSourceLanguage(language) {
             this.sourceLanguage = language;
             this.showSourceLanguageList = false;
-            if (this.user) {
-                this.updateUserLanguage(this.user.id, language.id);
+            if (localStorage.getItem('user')) {
+                this.updateUserLanguages();
             }
 
 
         },
-        // Fais moi une fonction qui effectue une requête pour dire que l'utilisateur a changé de langue, la route est /api/user/:id/language
-        async updateUserLanguages(userId, languageId) {
+        // Fais moi une fonction qui effectue une requête pour dire que l'utilisateur a changé de langue, la fonction nécessite router.post('/api/user_languages', authenticateToken, async (req, res) => {const userId = req.user.userId; const { user_source_language, user_target_language } = req.body;
+        async updateUserLanguages() {
+            console.log('je tente une requête avec les paramètres suivants :' + JSON.parse(localStorage.getItem('user')).id + ' ' + this.sourceLanguage.id + ' ' + this.targetLanguage.id + ' ');
+            const token = localStorage.getItem('authToken');
+            console.log(" le token est : " + token + "")
             try {
-                const response = await axios.put(`/api/users/${userId}/languages`, { languageId });
-                return response.data;
+                const response = await axios.post(
+                    `http://localhost:3001/api/user_languages/`,
+                    {
+                        userId: JSON.parse(localStorage.getItem('user')).id,
+                        user_source_language: this.sourceLanguage.id,
+                        user_target_language: this.targetLanguage.id,
+                    },
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    }
+                );
+                console.log(response.data);
             } catch (error) {
                 console.error(error);
                 throw new Error('Error updating user languages');
@@ -180,6 +205,9 @@ export default {
         selectTargetLanguage(language) {
             this.targetLanguage = language;
             this.showTargetLanguageList = false;
+            if (localStorage.getItem('user')) {
+                this.updateUserLanguages();
+            }
         },
         getFlagImageUrl(languageCode) {
             return `https://flagcdn.com/16x12/${languageCode.toLowerCase()}.png`;
@@ -315,8 +343,7 @@ export default {
                     this.translations = [];
                 });
         },
-
-
+        
         toggleMode() {
             this.mode = this.mode === 'text' ? 'choices' : 'text';
             this.showSourceLanguageList = false;
@@ -326,6 +353,7 @@ export default {
     watch: {
         sourceLanguage() {
             this.fetchWordToGuess(this.sourceLanguage.id, this.targetLanguage.id);
+            
             //this.fetchUserProgress(); // Ajoutez cette ligne
         },
         targetLanguage() {
@@ -351,6 +379,10 @@ export default {
 
 
 <style scoped>
+
+#word, .bouton-container button {
+    text-transform: lowercase;
+}
 
 .animate__fadeInDown {
   --animate-duration: 400ms;
@@ -476,11 +508,12 @@ export default {
 }
 
 .bouton-proposition {
+    overflow : auto;
     margin: 7px 15px;
     background-color: #FFFCF9;
     border: 1px #E0E0E0 solid;
     box-shadow: 0px 7px 4px rgba(0, 0, 0, 0.06);
-    width: 220px;
+    min-width: 220px;
     height: 60px;
     border-radius: 32px;
     font-family: "DinRoundPro-Bold";

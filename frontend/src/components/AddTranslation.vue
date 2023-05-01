@@ -27,6 +27,7 @@
                 <li v-for="translation in translations" :key="translation.id">
                     {{ translation.translation }} <span class="flag-icon"
                         :class="`flag-icon-${getLanguageCode(translation.language_id)}`"></span>
+                         ({{ translation.language_id }})
                 </li>
             </ul>
         </div>

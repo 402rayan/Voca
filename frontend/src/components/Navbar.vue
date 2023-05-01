@@ -386,6 +386,9 @@ export default {
                         headers: { Authorization: `Bearer ${token}` },
                     });
                     this.user = response.data;
+                    localStorage.clear();
+                    localStorage.setItem('authToken', token);
+                    localStorage.setItem('user', JSON.stringify(this.user));
 
                 } catch (error) {
                     console.error('Error retrieving user information:', error);

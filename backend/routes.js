@@ -457,6 +457,8 @@ router.get('/api/random-words', (req, res) => {
 
 function authenticateToken(req, res, next) {
     const authHeader = req.headers['authorization'];
+    logger.info('ADDITIONNEL : Authorization header: ' + authHeader);
+
 
     const token = authHeader && authHeader.split(' ')[1];
     logger.info('Authorization header: ' + token);
@@ -500,10 +502,32 @@ router.get('/api/user', authenticateToken, async (req, res) => {
         const userResponse = {
             id: user.id,
             username: user.username,
+            user_source_language: user.user_source_language,
+            user_target_language: user.user_target_language
             // add other properties as needed
         };
 
         res.json(userResponse);
+    });
+});
+
+router.post('/api/user_languages', authenticateToken, async (req, res) => {
+    const { userId, user_source_language, user_target_language } = req.body;
+
+    if (!user_source_language || !user_target_language) {
+        res.status(400).json({ error: "Les champs 'user_source_language' et 'user_target_language' sont obligatoires." });
+        return;
+    }
+    const query = 'UPDATE users SET user_source_language = ?, user_target_language = ? WHERE id = ?';
+
+    db.query(query, [user_source_language, user_target_language, userId], (err) => {
+        if (err) {
+            console.error('Error updating user languages:', err);
+            res.status(500).json({ success: false });
+            return;
+        }
+
+        res.json({ success: true });
     });
 });
 
