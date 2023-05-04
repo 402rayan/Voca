@@ -206,7 +206,7 @@ router.post('/api/register', async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, saltRounds);
 
         const query = `
-            INSERT INTO users (username, user_email, password,user_latest_language, user_latest_language_two)
+            INSERT INTO users (username, user_email, password,user_source_language, user_target_language)
             VALUES (?, ?, ?, 1 , 2);
         `;
 

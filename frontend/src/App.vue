@@ -186,7 +186,7 @@ export default {
     color : #9E9E9E;
     text-align: center;
     left: 0;
-    position: absolute;
+    position: block;
     width: 100%;
     padding: 0 10%;
     text-align: initial;

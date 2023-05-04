@@ -48,7 +48,7 @@ export default {
   align-items: center;
   padding: 10%;
   margin: 0;
-  height:70vh;
+  height:60vh;
   /* ajustez en fonction de la largeur souhaitée */
 }
 .category {
