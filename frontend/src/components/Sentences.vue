@@ -1,13 +1,16 @@
 <!-- Sentence.vue -->
 <template>
-    <div>
-        <h2>Apprendre des mots ludiques</h2>
-        <!-- Ajoutez ici votre logique d'apprentissage des mots ludiques -->
-
-      </div>
+    <VocabularyVue
+        :titre="'sentences'"
+        :specialization="'isSentence'"
+        />
 </template>
 <script>
+import VocabularyVue from './Vocabulary.vue';
 export default {
     name: 'SentencesVue',
+    components: {
+        VocabularyVue,
+    },
 };
 </script>

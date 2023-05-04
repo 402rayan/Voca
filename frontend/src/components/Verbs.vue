@@ -1,13 +1,11 @@
 <template>
-    <DevineurVue 
-    :titre="'vocabulary'"
-    />
+    <DevineurVue :titre="'verbs'" :specialization="'isVerb'" />
 </template>
 
 <script>
 import DevineurVue from './Devineur.vue';
 export default {
-    name: 'VocabularyVue',
+    name: 'VerbVue',
     components: {
         DevineurVue,
     },

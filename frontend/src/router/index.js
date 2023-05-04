@@ -6,6 +6,7 @@ import Sentences from '../components/Sentences.vue';
 import Register from '../components/Register.vue';
 import AddWord from '../components/AddWord.vue';
 import Login from '../components/Login.vue';
+import Verbs from '../components/Verbs.vue';
 
 
 const routes = [
@@ -38,11 +39,20 @@ const routes = [
     path: '/vocabulary',
     name: 'Vocabulary',
     component: Vocabulary,
+    props: true,
   },
+
   {
     path: '/sentences',
     name: 'Sentences',
     component: Sentences,
+    props: true,
+  },
+  {
+    path: '/verbs',
+    name: 'Verbs',
+    component: Verbs,
+    props: true,
   },
 ];
 

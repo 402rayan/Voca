@@ -23,6 +23,11 @@ const logger = winston.createLogger({
 router.get('/api/word-to-guess', (req, res) => {
     const sourceLanguageId = req.query.sourceLanguageId;
     const targetLanguageId = req.query.targetLanguageId;
+    var typeMot = req.query.typeMot;
+
+    if (!typeMot) {
+        typeMot = 'isVocabulary';
+    }
 
     if (!sourceLanguageId || !targetLanguageId) {
         res.status(400).send('Les paramètres sourceLanguageId et targetLanguageId sont requis.');
@@ -30,12 +35,12 @@ router.get('/api/word-to-guess', (req, res) => {
     }
 
     const getRandomWordQuery = `
-    SELECT * FROM words
+    SELECT * FROM words WHERE specialization = ?
     ORDER BY RAND()
     LIMIT 1;
   `;
 
-    db.query(getRandomWordQuery, [sourceLanguageId], (err, randomWordRows) => {
+    db.query(getRandomWordQuery, [typeMot], (err, randomWordRows) => {
         if (err) {
             console.error('Erreur lors de la récupération d\'un mot aléatoire:', err);
             res.status(500).send('Erreur lors de la récupération d\'un mot aléatoire.');
