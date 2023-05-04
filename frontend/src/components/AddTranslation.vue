@@ -1,35 +1,43 @@
 <template>
     <div class="container">
         <div class="translation-section">
-            <h1>Ajouter une traduction (mot)</h1>
-            <div class="form-group">
-                <label for="word">Mot :</label>
-                <select id="word" v-model="selectedWord">
-                    <option v-for="mot in words" :key="mot.id" :value="mot.id">
-                        {{ mot.word }}
-                    </option>
-                </select>
+            <div style="display : flex;width: 50%; justify-content: center; flex-direction : column; align-items: center;">
+                <h2>Ajouter une traduction (mot)</h2>
+                <div class="form-group">
+                    <label for="word">Mot :</label>
+                    <select id="word" v-model="selectedWord">
+                        <option v-for="mot in words" :key="mot.id" :value="mot.id">
+                            {{ mot.word }}
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="translation">Traduction :</label>
+                    <input type="text" id="translation" v-model="translation" />
+                </div>
+
+                <div class="form-group">
+                    <label for="targetLanguage">Langue :</label>
+                    <select id="targetLanguage" v-model="selectedTargetLanguage">
+                        <option v-for="language in languages" :key="language.id" :value="language.id">
+                            {{ language.language_name }}
+                        </option>
+                    </select>
+                </div>
+
+                <button @click="addTranslation" class="submit-btn">Ajouter la traduction</button>
             </div>
-            <div class="form-group">
-                <label for="translation">Traduction :</label>
-                <input type="text" id="translation" v-model="translation" />
+            <div style="width: 50%">
+                <ul class="translations-list">
+                    <li v-for="translation in translations" :key="translation.id">
+                        {{ translation.translation }} <span class="flag-icon"
+                            :class="`flag-icon-${getLanguageCode(translation.language_id)}`"></span>
+                        ({{ translation.language_id }})
+                    </li>
+                </ul>
             </div>
-            <div class="form-group">
-                <label for="targetLanguage">Langue :</label>
-                <select id="targetLanguage" v-model="selectedTargetLanguage">
-                    <option v-for="language in languages" :key="language.id" :value="language.id">
-                        {{ language.language_name }}
-                    </option>
-                </select>
-            </div>
-            <button @click="addTranslation" class="submit-btn">Ajouter la traduction</button>
-            <ul class="translations-list">
-                <li v-for="translation in translations" :key="translation.id">
-                    {{ translation.translation }} <span class="flag-icon"
-                        :class="`flag-icon-${getLanguageCode(translation.language_id)}`"></span>
-                         ({{ translation.language_id }})
-                </li>
-            </ul>
+
         </div>
         <div class="translation-section">
             <h1>Ajouter une traduction (caractère)</h1>
@@ -215,10 +223,12 @@ export default {
     display: flex;
     justify-content: space-around;
     padding: 20px;
+
 }
 
 .translation-section {
-    width: 45%;
+    width: 90%;
+    display: flex;
     background-color: #ffffff;
     padding: 20px;
     border-radius: 5px;
