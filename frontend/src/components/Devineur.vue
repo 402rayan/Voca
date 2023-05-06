@@ -29,10 +29,10 @@
                 </div>
             </div>
 
-            <div id="word"></div>
+            <div id="word" :style="{ 'font-size':  word_font_size }"></div>
         </div>
 
-        <div class="wrapper-guess">
+        <div class="wrapper-guess" :style="{ 'width': wrapper_guess_width }">
             <div v-if="mode === 'text'" class="wrapper-guess-one">
                 <div class="targetLanguage" @click="toggleTargetLanguageList">
                     <div class="espace-drapeau">
@@ -81,7 +81,7 @@
                     </ul>
                 </div>
                 <div class="bouton-container">
-                    <button v-for="(choice, index) in choices" v-bind:disabled="!bouton_cliquable" :key="index"
+                    <button  :style="{ 'min-width': taille_input }" v-for="(choice, index) in choices" v-bind:disabled="!bouton_cliquable" :key="index"
                         @click="checkChoice(choice, index)" class="bouton-proposition"
                         :class="{ 'animate__animated animate__pulse animate__shakeX animate__flash incorrect': index === incorrectButtonIndex, 'animate__animated animate__bounce correct': index === correctButtonIndex }">
                         {{ choice }}
@@ -108,9 +108,26 @@ export default {
             type: String,
             default: 'titre'
         },
+        taille_input: {
+            type: String,
+            default: '220px'
+        },
+        word_font_size: {
+            type: String,
+            default: '96px'
+        },
+        wrapper_guess_width: {
+            type: String,
+            default: '680px'
+            // 
+        },
         specialization: {
             type: String,
             default: 'isVocabulary'
+        },
+        vitesse_texte: {
+            type: Number,
+            default: 100
         },
         texte: {
             type: String,
@@ -317,7 +334,7 @@ export default {
 
         async fetchRandomWords(languageId, count) {
             try {
-                const response = await axios.get(`http://localhost:3001/api/random-words?languageId=${languageId}&count=${count}`);
+                const response = await axios.get(`http://localhost:3001/api/random-words?languageId=${languageId}&count=${count}&typeMot=${this.specialization}`);
                 return response.data;
             } catch (error) {
                 console.error('Error fetching random words:', error);
@@ -325,6 +342,7 @@ export default {
             }
         },
         async fetchWordToGuess(langue1, langue2) {
+            console.log("je fais une requête avec les paramètres suivants : " + langue1 + " " + langue2 + " " + this.specialization + "")
             axios
                 .get(`http://localhost:3001/api/word-to-guess`, {
                     params: {
@@ -334,6 +352,7 @@ export default {
                     },
                 })
                 .then((response) => {
+                    console.log(response.data)
                     const { word, translations } = response.data;
                     this.wordToGuess = word;
                     this.translations = translations;
@@ -347,10 +366,11 @@ export default {
 
                     // Créer une nouvelle instance Typed avec le nouveau mot
                     setTimeout(() => {
+                        console.log("je crée une nouvelle instance")
                         this.$nextTick(() => {
                             this.typedInstance = new Typed('#word', {
                                 strings: [this.translations[this.sourceLanguage.id]],
-                                typeSpeed: 100,
+                                typeSpeed: this.vitesse_texte,
                                 showCursor: false,
                             });
                         });

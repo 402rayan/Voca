@@ -439,16 +439,23 @@ router.post('/api/add-translation', async (req, res) => {
 router.get('/api/random-words', (req, res) => {
     const languageId = req.query.languageId;
     const count = parseInt(req.query.count, 10) || 3;
+    var typeMot = req.query.typeMot;
+
+    if (!typeMot) {
+        typeMot = 'isVocabulary';
+    }
 
     const query = `
-    SELECT translation
-    FROM translations
-    WHERE language_id = ?
+    SELECT t.translation
+    FROM translations t
+    JOIN words w ON t.word_id = w.id
+    WHERE t.language_id = ?
+    AND w.specialization = ?
     ORDER BY RAND()
     LIMIT ?
   `;
 
-    db.query(query, [languageId, count], (err, results) => {
+    db.query(query, [languageId,typeMot, count], (err, results) => {
         if (err) {
             console.error('Error fetching random words:', err);
             res.status(500).json({ error: 'Error fetching random words' });
@@ -681,7 +688,7 @@ router.get('/api/alphabets', (req, res) => {
 });
 
 router.post('/api/check-guess_cha', (req, res) => {
-    const { characterId, targetAlphabetId, guess} = req.body;
+    const { characterId, targetAlphabetId, guess } = req.body;
     // affiche dans les logs le user et la seconde langue
 
     if (!characterId || !targetAlphabetId || !guess) {
@@ -710,7 +717,7 @@ router.post('/api/check-guess_cha', (req, res) => {
         const isCorrect = guess.trim().toLowerCase() === correctTranslation.trim().toLowerCase();
 
         res.json({ correct: isCorrect });
-    
+
     });
 });
 

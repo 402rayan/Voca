@@ -2584,3 +2584,277 @@
 {"level":"info","message":"le user est bien géré","service":"user-service"}
 {"level":"info","message":"le user est : 12 et la seconde langue est : 2","service":"user-service"}
 {"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMjIxOTIwLCJleHAiOjE2ODMyMzI3MjB9.xFnRhU2eUD65XxCPZuM6-gZOla5ud3ARp_yAm7zs2CI","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMjIxOTIwLCJleHAiOjE2ODMyMzI3MjB9.xFnRhU2eUD65XxCPZuM6-gZOla5ud3ARp_yAm7zs2CI","service":"user-service"}
+{"level":"info","message":"Token invalide","service":"user-service"}
+{"level":"info","message":"le user est : null et la seconde langue est : 1","service":"user-service"}
+{"level":"info","message":"le user est : null et la seconde langue est : 1","service":"user-service"}
+{"level":"info","message":"le user est : null et la seconde langue est : 1","service":"user-service"}
+{"level":"info","message":"le user est : null et la seconde langue est : 1","service":"user-service"}
+{"level":"info","message":"le user est : null et la seconde langue est : 1","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMjg1NDE3LCJleHAiOjE2ODMyOTYyMTd9.uWSAOf4bXLw6-HhgxYqYYs8SXuZYuvB7ifCRPESzgBo","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMjg1NDE3LCJleHAiOjE2ODMyOTYyMTd9.uWSAOf4bXLw6-HhgxYqYYs8SXuZYuvB7ifCRPESzgBo","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 2","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 2","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 2","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 2","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 2","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 2","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 2","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 2","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMjg1NDE3LCJleHAiOjE2ODMyOTYyMTd9.uWSAOf4bXLw6-HhgxYqYYs8SXuZYuvB7ifCRPESzgBo","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMjg1NDE3LCJleHAiOjE2ODMyOTYyMTd9.uWSAOf4bXLw6-HhgxYqYYs8SXuZYuvB7ifCRPESzgBo","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMjg1NDE3LCJleHAiOjE2ODMyOTYyMTd9.uWSAOf4bXLw6-HhgxYqYYs8SXuZYuvB7ifCRPESzgBo","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMjg1NDE3LCJleHAiOjE2ODMyOTYyMTd9.uWSAOf4bXLw6-HhgxYqYYs8SXuZYuvB7ifCRPESzgBo","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMjg1NDE3LCJleHAiOjE2ODMyOTYyMTd9.uWSAOf4bXLw6-HhgxYqYYs8SXuZYuvB7ifCRPESzgBo","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMjg1NDE3LCJleHAiOjE2ODMyOTYyMTd9.uWSAOf4bXLw6-HhgxYqYYs8SXuZYuvB7ifCRPESzgBo","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMjg1NDE3LCJleHAiOjE2ODMyOTYyMTd9.uWSAOf4bXLw6-HhgxYqYYs8SXuZYuvB7ifCRPESzgBo","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMjg1NDE3LCJleHAiOjE2ODMyOTYyMTd9.uWSAOf4bXLw6-HhgxYqYYs8SXuZYuvB7ifCRPESzgBo","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 2","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 2","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 2","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMjg1NDE3LCJleHAiOjE2ODMyOTYyMTd9.uWSAOf4bXLw6-HhgxYqYYs8SXuZYuvB7ifCRPESzgBo","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMjg1NDE3LCJleHAiOjE2ODMyOTYyMTd9.uWSAOf4bXLw6-HhgxYqYYs8SXuZYuvB7ifCRPESzgBo","service":"user-service"}
+{"level":"info","message":"Token invalide","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 5","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 5","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 5","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 5","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 5","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 5","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 5","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 5","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 5","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 5","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 5","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 3","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 3","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 3","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
