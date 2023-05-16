@@ -1,7 +1,10 @@
 <template>
+    <br />
+    <SearchWordsVue />
     <div
         style="height: 80vh; overflow-y: scroll; display: flex; justify-content: center; align-items: center; flex-wrap: wrap;padding: 2%">
         <AddTranslation />
+        
         <div class="boite">
             <h1>Ajouter un mot</h1>
             <div class="form-group">
@@ -37,10 +40,12 @@
 <script>
 import axios from 'axios';
 import AddTranslation from './AddTranslation.vue';
+import SearchWordsVue from './SearchWordsVue.vue';
 
 export default {
     components: {
-        AddTranslation
+        AddTranslation,
+        SearchWordsVue,
     },
     data() {
         return {

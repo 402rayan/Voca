@@ -2858,3 +2858,84 @@
 {"level":"info","message":"le user est bien géré","service":"user-service"}
 {"level":"info","message":"le user est : 12 et la seconde langue est : 3","service":"user-service"}
 {"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzMzk3MDgxLCJleHAiOjE2ODM0MDc4ODF9.gC6_JqdPZYnjsSszU0Sv0s7rHLGvZV-iNz5z_PczSps","service":"user-service"}
+{"level":"info","message":"Token invalide","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzNDc0MTQwLCJleHAiOjE2ODM0ODQ5NDB9.mxm4IB9A58gAUBd8Kc5PKT6NC88mCnBYMINXwZi41aw","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzNDc0MTQwLCJleHAiOjE2ODM0ODQ5NDB9.mxm4IB9A58gAUBd8Kc5PKT6NC88mCnBYMINXwZi41aw","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 3","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 3","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 3","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 3","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 3","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 3","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzNDc0MTQwLCJleHAiOjE2ODM0ODQ5NDB9.mxm4IB9A58gAUBd8Kc5PKT6NC88mCnBYMINXwZi41aw","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzNDc0MTQwLCJleHAiOjE2ODM0ODQ5NDB9.mxm4IB9A58gAUBd8Kc5PKT6NC88mCnBYMINXwZi41aw","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 3","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 3","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzNDc0MTQwLCJleHAiOjE2ODM0ODQ5NDB9.mxm4IB9A58gAUBd8Kc5PKT6NC88mCnBYMINXwZi41aw","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzNDc0MTQwLCJleHAiOjE2ODM0ODQ5NDB9.mxm4IB9A58gAUBd8Kc5PKT6NC88mCnBYMINXwZi41aw","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 4","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzNDc0MTQwLCJleHAiOjE2ODM0ODQ5NDB9.mxm4IB9A58gAUBd8Kc5PKT6NC88mCnBYMINXwZi41aw","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzNDc0MTQwLCJleHAiOjE2ODM0ODQ5NDB9.mxm4IB9A58gAUBd8Kc5PKT6NC88mCnBYMINXwZi41aw","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 5","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzNDc0MTQwLCJleHAiOjE2ODM0ODQ5NDB9.mxm4IB9A58gAUBd8Kc5PKT6NC88mCnBYMINXwZi41aw","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzNDc0MTQwLCJleHAiOjE2ODM0ODQ5NDB9.mxm4IB9A58gAUBd8Kc5PKT6NC88mCnBYMINXwZi41aw","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 8","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzNDc0MTQwLCJleHAiOjE2ODM0ODQ5NDB9.mxm4IB9A58gAUBd8Kc5PKT6NC88mCnBYMINXwZi41aw","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzNDc0MTQwLCJleHAiOjE2ODM0ODQ5NDB9.mxm4IB9A58gAUBd8Kc5PKT6NC88mCnBYMINXwZi41aw","service":"user-service"}
+{"level":"info","message":"Token invalide","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 6","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 6","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 6","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 6","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 6","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 6","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzNDc0MTQwLCJleHAiOjE2ODM0ODQ5NDB9.mxm4IB9A58gAUBd8Kc5PKT6NC88mCnBYMINXwZi41aw","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjgzNDc0MTQwLCJleHAiOjE2ODM0ODQ5NDB9.mxm4IB9A58gAUBd8Kc5PKT6NC88mCnBYMINXwZi41aw","service":"user-service"}
+{"level":"info","message":"Token invalide","service":"user-service"}
+{"level":"info","message":"ADDITIONNEL : Authorization header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjg0MjU3NzUzLCJleHAiOjE2ODQyNjg1NTN9.oyRH_u1Ge5K21BAv3AjaVlG3LyM5j9FBTNZcSbb99EM","service":"user-service"}
+{"level":"info","message":"Authorization header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJ1c2VybmFtZSI6ImNhcmFtZWwzIiwiaWF0IjoxNjg0MjU3NzUzLCJleHAiOjE2ODQyNjg1NTN9.oyRH_u1Ge5K21BAv3AjaVlG3LyM5j9FBTNZcSbb99EM","service":"user-service"}
+{"level":"info","message":"On continue à la suite","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 8","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 8","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 8","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 8","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 8","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 8","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 8","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 8","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 8","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}
+{"level":"info","message":"le user est : 12 et la seconde langue est : 8","service":"user-service"}
+{"level":"info","message":"le user est bien géré","service":"user-service"}

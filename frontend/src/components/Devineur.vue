@@ -118,7 +118,7 @@ export default {
         },
         wrapper_guess_width: {
             type: String,
-            default: '680px'
+            default: '740px'
             // 
         },
         specialization: {

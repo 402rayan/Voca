@@ -300,9 +300,18 @@ router.get('/api/languages', (req, res) => {
 
 
 router.get('/api/words', (req, res) => {
-    const query = 'SELECT id, language_id, word FROM words';
+    // Récupérer le paramètre de requête "search" (ou utiliser une chaîne vide s'il est absent)
+    const searchQuery = req.query.search || '';
 
-    db.query(query, (err, results) => {
+    // Modifier la requête SQL pour inclure la condition de recherche si searchQuery n'est pas vide
+    const query = searchQuery
+        ? 'SELECT id, language_id, word FROM words WHERE word LIKE ?'
+        : 'SELECT id, language_id, word FROM words';
+
+    // Préparer les paramètres SQL pour éviter les injections SQL
+    const sqlParams = searchQuery ? [`%${searchQuery}%`] : [];
+
+    db.query(query, sqlParams, (err, results) => {
         if (err) {
             console.error('Error fetching words:', err);
             res.status(500).json({ error: 'Error fetching words' });
